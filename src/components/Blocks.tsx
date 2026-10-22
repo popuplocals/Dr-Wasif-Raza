@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import CompareSlider from "@/components/CompareSlider";
 
 export type Block =
   | { t: "h2"; text: string }
@@ -9,7 +10,8 @@ export type Block =
   | { t: "table"; head: string[]; rows: string[][] }
   | { t: "callout"; html: string; tone?: "teal" | "amber" | "sage" }
   | { t: "steps"; items: { title: string; text: string }[] }
-  | { t: "chips"; items: string[] };
+  | { t: "chips"; items: string[] }
+  | { t: "compare" };
 
 /** Renders a service page body. Every block is a scroll-triggered reveal so long pages feel paced. */
 export default function Blocks({ blocks }: { blocks: Block[] }) {
@@ -96,6 +98,12 @@ export default function Blocks({ blocks }: { blocks: Block[] }) {
                   </Reveal>
                 ))}
               </div>
+            );
+          case "compare":
+            return (
+              <Reveal key={i} y={20} duration={0.6} className="!mt-8">
+                <CompareSlider />
+              </Reveal>
             );
           case "chips":
             return (

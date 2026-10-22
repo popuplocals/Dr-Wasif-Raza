@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 import { SERVICES } from "@/content/services";
 import { EASE } from "@/lib/motion";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 const ORDER = [
   "colon-cancer-surgeon-lucknow",
@@ -33,10 +34,11 @@ export default function Expertise() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, ease: EASE, delay: (i % 4) * 0.09 }}
           >
+            <SpotlightCard className="h-full rounded-2xl">
             <Link href={`/${s.slug}`} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-card transition-[transform,box-shadow,border-color] duration-500 ease-spring hover:-translate-y-2 hover:border-teal/30 hover:shadow-lift">
               <div className="relative aspect-[16/10] overflow-hidden bg-teal-soft">
-                <Image src={s.image} alt={s.imageAlt} fill sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-[1100ms] ease-spring group-hover:scale-[1.07]" style={{ objectPosition: "center 25%" }} />
-                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-teal-deep/60 via-transparent to-transparent opacity-80" />
+                <Image src={s.illustration ?? s.image} alt={s.imageAlt} fill sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-[1100ms] ease-spring group-hover:scale-[1.07]" />
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-teal-deep/40 via-transparent to-transparent opacity-70" />
                 <span className="absolute left-4 top-4 rounded-full bg-surface/90 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-teal backdrop-blur">{s.eyebrow}</span>
               </div>
               <div className="flex flex-1 flex-col p-5">
@@ -48,6 +50,7 @@ export default function Expertise() {
                 </span>
               </div>
             </Link>
+            </SpotlightCard>
           </motion.div>
         ))}
       </div>

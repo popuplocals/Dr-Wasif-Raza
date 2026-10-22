@@ -7,6 +7,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { STORIES } from "@/content/stories";
 import { EASE } from "@/lib/motion";
+import { GBP_REVIEW_LINK, GOOGLE_RATING } from "@/lib/site";
 
 /** Home testimonial carousel. Autoplays gently, pauses on hover, swipe-able. Sample items carry a visible badge. */
 export default function Stories() {
@@ -26,6 +27,12 @@ export default function Stories() {
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">
         <div>
           <SectionHeading eyebrow="Patient stories" title="What patients say after their first visit." text="Shared with written consent. Individual results vary." />
+          <Reveal y={12} delay={0.15} className="mt-6">
+            <a href={GBP_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 rounded-2xl border border-line bg-surface px-4 py-3 shadow-card transition-transform duration-500 ease-spring hover:-translate-y-1">
+              <span className="font-heading text-[34px] font-semibold leading-none text-teal">{GOOGLE_RATING.score}</span>
+              <span className="text-[13.5px] leading-tight text-ink-2"><span className="block text-amber-dark" aria-hidden="true">★★★★★</span>{GOOGLE_RATING.count} Google reviews</span>
+            </a>
+          </Reveal>
           <Reveal y={12} delay={0.2} className="mt-6 flex flex-wrap gap-3">
             <Link href="/patient-stories" className="btn btn-ghost">
               Read more stories

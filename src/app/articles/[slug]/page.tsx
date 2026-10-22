@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
@@ -98,8 +99,8 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
           )}
 
           <Reveal y={14} className="mt-10 flex gap-5 rounded-3xl border border-line bg-surface p-6 shadow-card">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-amber/70 bg-teal font-heading text-[17px] font-semibold text-bg" aria-hidden="true">
-              WR
+            <span className="relative block h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-amber/80 bg-teal" aria-hidden="true">
+              <Image src="/photos/avatar.webp" alt="" fill sizes="56px" className="object-cover" />
             </span>
             <div className="text-[14.5px] leading-relaxed text-ink">
               <p className="font-heading text-[18px] font-semibold text-teal-deep">Dr. Wasif Raza</p>

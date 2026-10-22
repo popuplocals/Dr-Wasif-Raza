@@ -1,6 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { articleSummary, readingTime, type Article } from "@/lib/articles";
+
+const ART: Record<string, string> = {
+  "Colorectal Cancer": "/illustrations/colon.webp",
+  "Laparoscopic Surgery": "/illustrations/robotic.webp",
+  Hernia: "/illustrations/hernia.webp",
+  Gallbladder: "/illustrations/gallbladder.webp",
+  "Piles, Fissure & Fistula": "/illustrations/anorectal.webp",
+};
 
 const ICONS: Record<string, React.ReactNode> = {
   "Colorectal Cancer": <ColonIcon />,
@@ -13,7 +22,11 @@ const ICONS: Record<string, React.ReactNode> = {
 export default function ArticleCard({ a, index = 0, number }: { a: Article; index?: number; number?: number }) {
   return (
     <Reveal index={index % 3} y={28} className="h-full">
-      <Link href={`/articles/${a.slug}`} lang={a.lang} className="group flex h-full flex-col rounded-2xl border border-line bg-surface p-6 shadow-card transition-[transform,box-shadow,border-color] duration-500 ease-spring hover:-translate-y-2 hover:border-teal/30 hover:shadow-lift">
+      <Link href={`/articles/${a.slug}`} lang={a.lang} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-card transition-[transform,box-shadow,border-color] duration-500 ease-spring hover:-translate-y-2 hover:border-teal/30 hover:shadow-lift">
+        <div className="relative aspect-[16/8] overflow-hidden bg-teal-soft">
+          <Image src={ART[a.category] ?? "/illustrations/colon.webp"} alt="" fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-[1100ms] ease-spring group-hover:scale-[1.06]" />
+        </div>
+        <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center justify-between">
           <span className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-soft text-teal transition-transform duration-500 ease-spring group-hover:rotate-6 group-hover:scale-110">{ICONS[a.category] ?? <ColonIcon />}</span>
           {number !== undefined && <span className="font-heading text-[13px] tracking-[0.16em] text-ink-2">{String(number).padStart(2, "0")}</span>}
@@ -29,6 +42,7 @@ export default function ArticleCard({ a, index = 0, number }: { a: Article; inde
           <span className="inline-flex items-center gap-1.5 font-semibold text-teal">
             Read <span aria-hidden="true" className="transition-transform duration-300 ease-spring group-hover:translate-x-1">→</span>
           </span>
+        </div>
         </div>
       </Link>
     </Reveal>

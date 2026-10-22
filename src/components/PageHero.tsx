@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { EASE } from "@/lib/motion";
+import TiltCard from "@/components/ui/TiltCard";
 
 type Crumb = { label: string; href?: string };
 
@@ -14,6 +15,8 @@ type PageHeroProps = {
   heading: string;
   subtitle?: string;
   image?: { src: string; alt: string; position?: string };
+  /** Landscape topic illustration (16:9). Takes precedence over `image`. */
+  figure?: { src: string; alt: string; caption?: string };
   children?: React.ReactNode;
   lang?: string;
   compact?: boolean;
@@ -23,7 +26,7 @@ type PageHeroProps = {
  * Inner-page hero on a deep-teal field. The heading reveals word by word with a soft rise + rotation,
  * the subtitle follows, and an optional arch-framed photo parallaxes gently as the page scrolls.
  */
-export default function PageHero({ breadcrumbs, eyebrow, heading, subtitle, image, children, lang, compact }: PageHeroProps) {
+export default function PageHero({ breadcrumbs, eyebrow, heading, subtitle, image, figure, children, lang, compact }: PageHeroProps) {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -90,7 +93,18 @@ export default function PageHero({ breadcrumbs, eyebrow, heading, subtitle, imag
           )}
         </motion.div>
 
-        {image && (
+        {figure && (
+          <motion.div style={{ y: imgY }} initial={{ opacity: 0, y: 30, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 1, ease: EASE, delay: 0.25 }} className="relative mx-auto hidden w-full max-w-[520px] lg:block">
+            <TiltCard max={5} className="rounded-[28px]">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-[28px] bg-surface shadow-lift ring-1 ring-white/15">
+                <Image src={figure.src} alt={figure.alt} fill sizes="(min-width: 1024px) 520px, 0px" className="object-cover" priority />
+              </div>
+            </TiltCard>
+            {figure.caption && <p className="mt-3 text-center text-[12.5px] text-bg/60">{figure.caption}</p>}
+            <span aria-hidden="true" className="absolute -right-5 -top-5 -z-10 h-24 w-24 rounded-full border-2 border-dashed border-amber/40" />
+          </motion.div>
+        )}
+        {!figure && image && (
           <motion.div
             style={{ y: imgY }}
             initial={{ opacity: 0, scale: 0.94, y: 30 }}

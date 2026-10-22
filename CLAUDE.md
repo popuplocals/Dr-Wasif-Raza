@@ -27,3 +27,9 @@ No stock photos. No Montserrat/Poppins. No "best / painless / permanent / guaran
 
 ## Supplied media audit (22 Oct 2026)
 38 WhatsApp photos → 36 used (all on the gallery; #20 "Welcoming" poster graphic and #25 printed programme page were skipped as non-photos). 4 OT videos → 2 used as click-to-play clips in Gallery › In the OT (`public/videos`); the other two show an open surgical field with visible blood and were left out — ask Dr. Raza before publishing those.
+
+## Round 2 (22 Oct 2026): new hero, illustrations, interactive components
+- Hero is now a light editorial layout (`home/Hero.tsx`): masked line reveals, cursor spotlight, tilting portrait panel (`at-desk.webp`), floating credential chips, magnetic CTAs, Google rating pill.
+- `public/illustrations/*.webp` — 9 AI-generated topic illustrations (Canva generate-image, 1600×900). Mapped per service via `illustration` in `services.ts`; used in service heroes (`PageHero figure`), home Expertise cards, SymptomChecker and ArticleCard headers. They are illustrations, not patient images, and the service hero says so.
+- Interactive components: `ui/Magnetic`, `ui/TiltCard`, `ui/SpotlightCard`, `ui/ScrollText`, `home/SymptomChecker` (replaces the static table), `home/Statement`, `CompareSlider` (block type `compare`, used on laparoscopic + hernia pages).
+- Google Business Profile "Dr Wasif Raza – Colorectal & General Surgeon": 5.0 from 218 reviews on 22 Oct 2026 (`GOOGLE_RATING` in site.ts — update by hand). The listing has no graphic logo; its profile headshot is now `photos/profile.webp` / `photos/avatar.webp` (navbar, footer, article byline, OG image). GBP hours say "Open 24 hours" while the site says Mon–Sat by appointment — align the GBP.

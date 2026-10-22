@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -121,13 +122,8 @@ export default function Navbar() {
           >
             <nav className={`mx-auto flex h-full w-full max-w-[1400px] items-center justify-between gap-4 transition-[padding] duration-[450ms] ease-spring ${scrolled ? "px-4 md:px-6" : "px-5 md:px-10"}`} aria-label="Main">
               <Link href="/" className="group flex shrink-0 items-center gap-3">
-                <span
-                  className={`flex items-center justify-center rounded-full border border-amber/70 bg-teal font-heading font-semibold text-bg transition-[height,width,transform] duration-[450ms] ease-spring group-hover:scale-105 ${
-                    scrolled ? "h-9 w-9 text-[13px]" : "h-11 w-11 text-[15px]"
-                  }`}
-                  aria-hidden="true"
-                >
-                  WR
+                <span className={`relative block shrink-0 overflow-hidden rounded-full border-2 border-amber/80 bg-teal transition-[height,width,transform] duration-[450ms] ease-spring group-hover:scale-105 ${scrolled ? "h-9 w-9" : "h-11 w-11"}`} aria-hidden="true">
+                  <Image src="/photos/avatar.webp" alt="" fill sizes="44px" className="object-cover" priority />
                 </span>
                 <span className="flex flex-col leading-[1.1]">
                   <span className="font-heading text-[18px] font-semibold text-teal-deep">Dr. Wasif Raza</span>

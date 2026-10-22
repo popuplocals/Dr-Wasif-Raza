@@ -5,7 +5,8 @@ import Marquee from "@/components/Marquee";
 import AboutStrip from "@/components/home/AboutStrip";
 import Numbers from "@/components/home/Numbers";
 import Expertise from "@/components/home/Expertise";
-import SymptomGuide from "@/components/home/SymptomGuide";
+import SymptomChecker from "@/components/home/SymptomChecker";
+import Statement from "@/components/home/Statement";
 import WhyBand from "@/components/home/WhyBand";
 import Credentials from "@/components/home/Credentials";
 import Stories from "@/components/home/Stories";
@@ -38,7 +39,8 @@ export default function HomePage() {
       <AboutStrip />
       <Numbers />
       <Expertise />
-      <SymptomGuide />
+      <Statement />
+      <SymptomChecker />
       <WhyBand />
       <Credentials />
       <Stories />

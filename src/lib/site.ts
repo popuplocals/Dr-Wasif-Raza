@@ -7,12 +7,16 @@ export const WHATSAPP = "https://wa.me/919278072150";
 export const WHATSAPP_MSG = (text: string) => `${WHATSAPP}?text=${encodeURIComponent(text)}`;
 export const APOLLO247 = "https://www.apollo247.com/";
 export const HOSPITAL = "Apollo Medics Superspeciality Hospitals";
-export const ADDRESS_LINES = ["Sector B, LDA Colony, Lucknow–Kanpur Road", "Lucknow, Uttar Pradesh — 226012"];
+export const ADDRESS_LINES = ["Sector B, Bargawan, LDA Colony, Lucknow–Kanpur Road", "Lucknow, Uttar Pradesh 226012"];
 export const ADDRESS = ADDRESS_LINES.join(", ");
 export const OPD = "Monday – Saturday, by appointment";
 export const NMC = "08-33828";
 export const GMC = "7555694";
-export const MAPS_LINK = "https://www.google.com/maps/search/?api=1&query=Apollo+Medics+Superspeciality+Hospitals+Lucknow";
+/** Google Maps listing "Dr Wasif Raza – Colorectal & General Surgeon" (place CID). */
+export const MAPS_LINK = "https://maps.google.com/?cid=3084555660444796987";
+/** Google Business Profile: "Dr Wasif Raza – Colorectal & General Surgeon" — rating as seen on 22 Oct 2026. Update when it changes. */
+export const GOOGLE_RATING = { score: "5.0", count: 218 };
+export const GBP_REVIEW_LINK = "https://www.google.com/search?q=dr+wasif+raza+colorectal+%26+general+surgeon+lucknow+reviews";
 export const MAPS_EMBED =
   "https://www.google.com/maps?q=Apollo+Medics+Superspeciality+Hospitals,+Sector+B,+LDA+Colony,+Kanpur+Road,+Lucknow&output=embed";
 export const CREDENTIALS = "MBBS · MS · MCh (Colon & Rectal Surgery) · FRCS (UK) · FACS (USA)";
@@ -67,21 +71,21 @@ export const PHYSICIAN_LD = {
   "@id": `${SITE_URL}/#physician`,
   name: "Dr. Wasif Raza",
   url: SITE_URL,
-  image: `${SITE_URL}/photos/portrait-seated.webp`,
+  image: `${SITE_URL}/photos/profile.webp`,
   telephone: "+91 92780 72150",
   medicalSpecialty: ["Colorectal Surgery", "General Surgery", "Laparoscopic Surgery", "Robotic Surgery"],
   jobTitle: "Associate Director — Colorectal & General Surgery",
   worksFor: { "@type": "Hospital", name: HOSPITAL },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Sector B, LDA Colony, Lucknow–Kanpur Road",
+    streetAddress: "Sector B, Bargawan, LDA Colony, Lucknow–Kanpur Road",
     addressLocality: "Lucknow",
     addressRegion: "Uttar Pradesh",
     postalCode: "226012",
     addressCountry: "IN",
   },
   openingHours: "Mo-Sa by appointment",
-  sameAs: [WHATSAPP],
+  sameAs: [WHATSAPP, MAPS_LINK],
 };
 
 export function breadcrumbLd(items: { name: string; href: string }[]) {

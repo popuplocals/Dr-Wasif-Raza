@@ -13,7 +13,8 @@ export type Service = {
   eyebrow: string;
   intro: string; // hero paragraph (inline HTML allowed)
   card: string; // one-liner for the home expertise card
-  image: string; // /photos/*.webp
+  image: string; // /photos/*.webp (doctor photo)
+  illustration?: string; // /illustrations/*.webp (generated topic illustration)
   imageAlt: string;
   highlights: string[]; // 3–4 chips under the hero
   glance?: { label: string; value: string }[]; // "At a glance" strip
@@ -36,6 +37,7 @@ const BOOK = "Book a consultation: <a href=\"tel:+919278072150\">+91 92780 72150
 export const SERVICES: Service[] = [
   {
     slug: "colon-cancer-surgeon-lucknow",
+    illustration: "/illustrations/colon.webp",
     name: "Colon Cancer Surgery",
     h1: "Colon Cancer Surgeon in Lucknow",
     title: "Colon Cancer Surgeon in Lucknow | Laparoscopic & Robotic Colon Cancer Surgery | Dr. Wasif Raza",
@@ -128,6 +130,7 @@ export const SERVICES: Service[] = [
 
   {
     slug: "rectal-cancer-surgeon-lucknow",
+    illustration: "/illustrations/rectal.webp",
     name: "Rectal Cancer Surgery",
     h1: "Rectal Cancer Surgeon in Lucknow",
     title: "Rectal Cancer Surgeon in Lucknow | Sphincter-Saving & Robotic Rectal Surgery | Dr. Wasif Raza",
@@ -189,6 +192,7 @@ export const SERVICES: Service[] = [
 
   {
     slug: "second-opinion-colon-rectal-cancer-lucknow",
+    illustration: "/illustrations/second-opinion.webp",
     name: "Second Opinion — Colon & Rectal Cancer",
     h1: "Second Opinion for Colon & Rectal Cancer",
     title: "Second Opinion for Colon & Rectal Cancer in Lucknow | Dr. Wasif Raza",
@@ -246,6 +250,7 @@ export const SERVICES: Service[] = [
 
   {
     slug: "laparoscopic-robotic-surgeon-lucknow",
+    illustration: "/illustrations/robotic.webp",
     name: "Laparoscopic & Robotic Surgery",
     h1: "Laparoscopic & Robotic Surgeon in Lucknow",
     title: "Laparoscopic & Robotic Surgeon in Lucknow | da Vinci Xi Surgery | Dr. Wasif Raza",
@@ -287,6 +292,7 @@ export const SERVICES: Service[] = [
           ["Infection risk", "Lower", "Higher"],
         ],
       },
+      { t: "compare" },
       { t: "h2", text: "Procedures performed laparoscopically and robotically" },
       {
         t: "ul",
@@ -316,6 +322,7 @@ export const SERVICES: Service[] = [
 
   {
     slug: "hernia-surgery-lucknow",
+    illustration: "/illustrations/hernia.webp",
     name: "Hernia Surgery",
     h1: "Hernia Surgeon in Lucknow",
     title: "Hernia Surgeon in Lucknow | Laparoscopic & Robotic Hernia Surgery | Dr. Wasif Raza",
@@ -375,6 +382,7 @@ export const SERVICES: Service[] = [
           ["Heavy lifting", "3–4 weeks", "6 weeks"],
         ],
       },
+      { t: "compare" },
       { t: "p", html: "Individual results vary. " + BOOK },
     ],
     faqs: [
@@ -389,6 +397,7 @@ export const SERVICES: Service[] = [
 
   {
     slug: "gallbladder-surgery-lucknow",
+    illustration: "/illustrations/gallbladder.webp",
     name: "Gallbladder Stone Surgery",
     h1: "Gallbladder Stone Surgery in Lucknow",
     title: "Gallbladder Surgeon in Lucknow | Laparoscopic Cholecystectomy | Gallstone Surgery | Dr. Wasif Raza",
@@ -441,6 +450,7 @@ export const SERVICES: Service[] = [
 
   {
     slug: "appendix-surgery-lucknow",
+    illustration: "/illustrations/appendix.webp",
     name: "Appendix Surgery",
     h1: "Appendix Surgery in Lucknow",
     title: "Appendix Surgeon in Lucknow | Laparoscopic Appendicectomy | Appendicitis Surgery | Dr. Wasif Raza",
@@ -491,6 +501,7 @@ export const SERVICES: Service[] = [
 
   {
     slug: "gi-surgeon-lucknow",
+    illustration: "/illustrations/colon.webp",
     name: "General & GI Surgery",
     h1: "General & GI Surgeon in Lucknow",
     title: "GI Surgeon in Lucknow | Intestinal Obstruction, Diverticulitis & Bowel Surgery | Dr. Wasif Raza",
@@ -536,6 +547,7 @@ export const SERVICES: Service[] = [
 
   {
     slug: "colonoscopy-lucknow",
+    illustration: "/illustrations/colonoscopy.webp",
     name: "Colonoscopy",
     h1: "Colonoscopy in Lucknow",
     title: "Colonoscopy in Lucknow | Colorectal Cancer Screening | Dr. Wasif Raza, Apollo Medics",
@@ -601,6 +613,7 @@ export const SERVICES: Service[] = [
 
   {
     slug: "rectal-bleeding-lucknow",
+    illustration: "/illustrations/colonoscopy.webp",
     name: "Rectal Bleeding",
     h1: "Rectal Bleeding — Blood in Stool",
     title: "Rectal Bleeding Treatment in Lucknow | Blood in Stool Specialist | Dr. Wasif Raza",
@@ -652,6 +665,7 @@ export const SERVICES: Service[] = [
 
   {
     slug: "piles-treatment-lucknow",
+    illustration: "/illustrations/anorectal.webp",
     name: "Piles (Haemorrhoid) Surgery",
     h1: "Piles (Haemorrhoid) Surgeon in Lucknow",
     title: "Piles Surgeon in Lucknow | Haemorrhoid Surgery | Dr. Wasif Raza",
@@ -707,6 +721,7 @@ export const SERVICES: Service[] = [
 
   {
     slug: "anal-fissure-treatment-lucknow",
+    illustration: "/illustrations/anorectal.webp",
     name: "Anal Fissure Surgery",
     h1: "Anal Fissure Treatment in Lucknow",
     title: "Fissure Surgeon in Lucknow | Anal Fissure Surgery | Dr. Wasif Raza",
@@ -748,6 +763,7 @@ export const SERVICES: Service[] = [
 
   {
     slug: "anal-fistula-surgery-lucknow",
+    illustration: "/illustrations/anorectal.webp",
     name: "Anal Fistula Surgery",
     h1: "Anal Fistula Surgery in Lucknow",
     title: "Fistula Surgeon in Lucknow | Anal Fistula Surgery | Dr. Wasif Raza",

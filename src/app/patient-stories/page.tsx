@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import { STORIES } from "@/content/stories";
-import { breadcrumbLd, MAPS_LINK } from "@/lib/site";
+import { breadcrumbLd, GBP_REVIEW_LINK, GOOGLE_RATING } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Patient Stories & Reviews | Dr. Wasif Raza, Colorectal Surgeon Lucknow",
@@ -31,9 +31,9 @@ export default function StoriesPage() {
         <Reveal y={20} className="mt-12 flex flex-col items-start gap-4 rounded-3xl bg-teal-deep p-8 text-bg md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="text-[26px] text-white">Treated by Dr. Raza?</h2>
-            <p className="mt-2 text-bg/80">A short Google review helps the next patient find a specialist sooner.</p>
+            <p className="mt-2 text-bg/80">Rated {GOOGLE_RATING.score} from {GOOGLE_RATING.count} Google reviews. A short review helps the next patient find a specialist sooner.</p>
           </div>
-          <a href={MAPS_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-amber">
+          <a href={GBP_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-amber">
             Review on Google
           </a>
         </Reveal>

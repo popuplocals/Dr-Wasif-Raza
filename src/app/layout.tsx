@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Dr. Wasif Raza — Colorectal & Laparoscopic Surgeon, Lucknow",
     locale: "en_IN",
-    images: [{ url: "/photos/portrait-seated.webp", width: 648, height: 1280, alt: "Dr Wasif Raza colon and rectal cancer surgeon Lucknow Apollo Medics" }],
+    images: [{ url: "/photos/profile.webp", width: 800, height: 1040, alt: "Dr Wasif Raza colon and rectal cancer surgeon Lucknow Apollo Medics" }],
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ADDRESS_LINES, CREDENTIALS, GMC, HOSPITAL, NAV_GROUPS, NMC, OPD, PHONE_DISPLAY, PHONE_TEL, ROLE, WHATSAPP } from "@/lib/site";
 
 export default function Footer() {
@@ -10,8 +11,8 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
             <Link href="/" className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full border border-amber/70 bg-teal font-heading text-[15px] font-semibold text-bg" aria-hidden="true">
-                WR
+              <span className="relative block h-11 w-11 overflow-hidden rounded-full border-2 border-amber/80 bg-teal" aria-hidden="true">
+                <Image src="/photos/avatar.webp" alt="" fill sizes="44px" className="object-cover" />
               </span>
               <span className="font-heading text-[22px] font-semibold text-white">Dr. Wasif Raza</span>
             </Link>

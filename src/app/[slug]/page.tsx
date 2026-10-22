@@ -11,6 +11,7 @@ import { GROUP_LABEL, SERVICES, SERVICE_BY_SLUG } from "@/content/services";
 import { ARTICLE_BY_SLUG } from "@/lib/articles";
 import { breadcrumbLd, faqLd, HOSPITAL, PHONE_DISPLAY, PHONE_TEL, SITE_URL, WHATSAPP } from "@/lib/site";
 import { PhoneIcon, WaIcon } from "@/components/Navbar";
+import Image from "next/image";
 
 type Params = { slug: string };
 
@@ -49,7 +50,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 
   return (
     <>
-      <PageHero breadcrumbs={[{ label: "Home", href: "/" }, { label: GROUP_LABEL[s.group] }, { label: s.name }]} eyebrow={s.eyebrow} heading={s.h1} subtitle={s.intro} image={{ src: s.image, alt: s.imageAlt }}>
+      <PageHero breadcrumbs={[{ label: "Home", href: "/" }, { label: GROUP_LABEL[s.group] }, { label: s.name }]} eyebrow={s.eyebrow} heading={s.h1} subtitle={s.intro} image={{ src: s.image, alt: s.imageAlt }} figure={s.illustration ? { src: s.illustration, alt: s.imageAlt, caption: "Illustration — not a patient image" } : undefined}>
         <div className="flex flex-wrap gap-2">
           {s.highlights.map((h) => (
             <span key={h} className="rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[13.5px] text-bg backdrop-blur">
@@ -74,6 +75,11 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 
       <section className="mx-auto grid max-w-[1400px] gap-12 px-5 py-16 md:px-10 md:py-24 lg:grid-cols-[minmax(0,1fr)_340px]">
         <article>
+          {s.illustration && (
+            <Reveal y={16} className="relative mb-10 aspect-[16/9] overflow-hidden rounded-3xl shadow-card lg:hidden">
+              <Image src={s.illustration} alt={s.imageAlt} fill sizes="100vw" className="object-cover" />
+            </Reveal>
+          )}
           <Blocks blocks={s.blocks} />
           {s.hindi && (
             <Reveal y={14} className="mt-10 rounded-2xl border border-sage-deep bg-sage/50 p-5 text-[16.5px] leading-relaxed text-teal-deep">
