@@ -24,3 +24,6 @@ No stock photos. No Montserrat/Poppins. No "best / painless / permanent / guaran
 3. Contact form opens WhatsApp with a prefilled message; wire a backend/form service if a stored callback request is needed.
 4. Set `NEXT_PUBLIC_SITE_URL` to the final domain; add the Google Business Profile link; verify NAP matches GBP character for character.
 5. Hindi text was retyped from the PDF — have a Hindi reader proof it.
+
+## Supplied media audit (22 Oct 2026)
+38 WhatsApp photos → 36 used (all on the gallery; #20 "Welcoming" poster graphic and #25 printed programme page were skipped as non-photos). 4 OT videos → 2 used as click-to-play clips in Gallery › In the OT (`public/videos`); the other two show an open surgical field with visible blood and were left out — ask Dr. Raza before publishing those.
