@@ -61,9 +61,11 @@ body {
 }
 ::selection { background: var(--color-amber-pale); color: var(--color-teal-deep); }
 
-h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; letter-spacing: -0.01em; line-height: 1.12; color: var(--color-teal-deep); text-wrap: balance; }
-[lang="hi"], .hi { font-family: var(--font-hindi); }
-[lang="hi"] h1, [lang="hi"] h2, [lang="hi"] h3 { font-family: var(--font-hindi); font-weight: 700; }
+@layer base {
+  h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; letter-spacing: -0.01em; line-height: 1.12; color: var(--color-teal-deep); text-wrap: balance; }
+  [lang="hi"], .hi { font-family: var(--font-hindi); }
+  [lang="hi"] h1, [lang="hi"] h2, [lang="hi"] h3 { font-family: var(--font-hindi); font-weight: 700; }
+}
 
 /* Page transition */
 .page-enter { animation: page-enter 0.7s var(--ease-out-expo) both; }
