@@ -8,12 +8,15 @@ import CtaBand from "@/components/CtaBand";
 import Reveal from "@/components/Reveal";
 import ArticleCard from "@/components/ArticleCard";
 import ReadingProgress from "@/components/ReadingProgress";
+import ArticleReader from "@/components/ArticleReader";
 import { ARTICLE_BY_SLUG, ARTICLE_ORDER, readingTime, SOURCES } from "@/lib/articles";
 import { SERVICE_BY_SLUG } from "@/content/services";
 import { breadcrumbLd, faqLd, GMC, HOSPITAL, NMC, PHONE_DISPLAY, PHONE_TEL, SITE_URL, WHATSAPP } from "@/lib/site";
 import { PhoneIcon, WaIcon } from "@/components/Navbar";
 
 type Params = { slug: string };
+
+const COUNTER: Record<string, { href: string; label: string } | undefined> = {"bawaseer-lakshan-karan-ilaj":{"href":"/articles/piles-vs-fissure-vs-fistula","label":"Read in English"},"piles-vs-fissure-vs-fistula":{"href":"/articles/bawaseer-lakshan-karan-ilaj","label":"हिन्दी में पढ़ें"},"pitt-ki-pathri-ka-operation":{"href":"/articles/gallstones-always-need-surgery","label":"Read in English"},"gallstones-always-need-surgery":{"href":"/articles/pitt-ki-pathri-ka-operation","label":"हिन्दी में पढ़ें"}};
 
 export function generateStaticParams() {
   return ARTICLE_ORDER.map((slug) => ({ slug }));
@@ -65,7 +68,9 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
 
       <section className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)] gap-12 px-5 py-14 md:px-10 md:py-20 lg:grid-cols-[minmax(0,1fr)_320px]">
         <article>
-          <Reveal y={16} className={`prose-wr ${hi ? "font-hindi" : ""}`} dangerouslySetInnerHTML={{ __html: a.html }} />
+          <ArticleReader lang={a.lang} counterpart={COUNTER[a.slug]}>
+            <Reveal y={16} className={`prose-wr ${hi ? "font-hindi" : ""}`} dangerouslySetInnerHTML={{ __html: a.html }} />
+          </ArticleReader>
 
           {a.faqs.length > 0 && (
             <div className="mt-14">

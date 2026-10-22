@@ -12,6 +12,12 @@ import { ARTICLE_BY_SLUG } from "@/lib/articles";
 import { breadcrumbLd, faqLd, HOSPITAL, PHONE_DISPLAY, PHONE_TEL, SITE_URL, WHATSAPP } from "@/lib/site";
 import { PhoneIcon, WaIcon } from "@/components/Navbar";
 import Image from "next/image";
+import TreatmentJourney from "@/components/TreatmentJourney";
+import RecoveryCalculator from "@/components/RecoveryCalculator";
+import AnatomyViewer from "@/components/AnatomyViewer";
+import { hasAnatomy } from "@/content/anatomy";
+import ReportDrop from "@/components/contact/ReportDrop";
+import { RECOVERY } from "@/content/recovery";
 
 type Params = { slug: string };
 
@@ -75,12 +81,16 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 
       <section className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)] gap-12 px-5 py-16 md:px-10 md:py-24 lg:grid-cols-[minmax(0,1fr)_340px]">
         <article>
-          {s.illustration && (
+          {s.illustration && hasAnatomy(s.slug) && <AnatomyViewer slug={s.slug} src={s.illustration} alt={s.imageAlt} />}
+          {s.illustration && !hasAnatomy(s.slug) && (
             <Reveal y={16} className="relative mb-10 aspect-[16/9] overflow-hidden rounded-3xl shadow-card lg:hidden">
               <Image src={s.illustration} alt={s.imageAlt} fill sizes="100vw" className="object-cover" />
             </Reveal>
           )}
           <Blocks blocks={s.blocks} />
+          {s.slug === "second-opinion-colon-rectal-cancer-lucknow" && <ReportDrop />}
+          {RECOVERY[s.slug] && <RecoveryCalculator slug={s.slug} />}
+          <TreatmentJourney group={s.group} />
           {s.hindi && (
             <Reveal y={14} className="mt-10 rounded-2xl border border-sage-deep bg-sage/50 p-5 text-[16.5px] leading-relaxed text-teal-deep">
               <span className="hi">{s.hindi}</span>

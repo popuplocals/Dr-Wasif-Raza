@@ -70,6 +70,11 @@ body {
 }
 
 @layer components {
+/* Page transition: a teal sheet that lifts away on every navigation */
+.page-wipe { position: fixed; inset: 0; z-index: 9000; background: var(--color-teal-deep); pointer-events: none; animation: page-wipe 0.8s cubic-bezier(0.76, 0, 0.24, 1) 0.05s both; }
+@keyframes page-wipe { from { clip-path: inset(0 0 0 0); } to { clip-path: inset(0 0 100% 0); visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { .page-wipe { display: none; } }
+
 /* Page transition */
 .page-enter { overflow-x: clip; animation: page-enter 0.7s var(--ease-out-expo) both; }
 @keyframes page-enter {
@@ -102,7 +107,7 @@ html.wr-splash .wr-site { visibility: hidden; }
 .btn-ghost-light:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
 
 /* Prose (service bodies & articles) */
-.prose-wr { font-size: 17.5px; line-height: 1.75; color: var(--color-ink); }
+.prose-wr { font-size: calc(17.5px * var(--prose-scale, 1)); line-height: 1.75; color: var(--color-ink); }
 .prose-wr > * + * { margin-top: 1.1em; }
 .prose-wr h2 { font-size: clamp(24px, 2.4vw, 30px); margin-top: 2.2em; margin-bottom: 0.5em; position: relative; padding-top: 0.9em; }
 .prose-wr h2::before { content: ""; position: absolute; top: 0; left: 0; width: 44px; border-top: 2px dashed rgba(230,162,60,0.75); }

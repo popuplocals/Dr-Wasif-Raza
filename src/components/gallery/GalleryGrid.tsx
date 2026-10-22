@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { GALLERY, GALLERY_CATEGORIES, type GalleryItem } from "@/content/gallery";
 import { EASE } from "@/lib/motion";
+import TiltCard from "@/components/ui/TiltCard";
 
 export default function GalleryGrid() {
   const [cat, setCat] = useState<(typeof GALLERY_CATEGORIES)[number]>("All");
@@ -43,7 +44,7 @@ export default function GalleryGrid() {
         <AnimatePresence mode="popLayout">
           {list.map((g, i) => (
             <motion.figure key={g.src} layout initial={{ opacity: 0, y: 24, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, scale: 0.96 }} transition={{ duration: 0.5, ease: EASE, delay: Math.min(i, 8) * 0.04 }} className="group relative break-inside-avoid overflow-hidden rounded-2xl bg-surface shadow-card">
-              <button type="button" onClick={() => setOpen(i)} className={`block w-full text-left ${g.video ? "cursor-pointer" : "cursor-zoom-in"}`} aria-label={`${g.video ? "Play" : "Open"}: ${g.caption}`}>
+              <TiltCard max={3} glare={false} className="h-full"><button type="button" onClick={() => setOpen(i)} className={`block w-full text-left ${g.video ? "cursor-pointer" : "cursor-zoom-in"}`} aria-label={`${g.video ? "Play" : "Open"}: ${g.caption}`}>
                 <Image src={g.src} alt={g.alt} width={g.w} height={g.h} sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" className="h-auto w-full object-cover transition-transform duration-[1100ms] ease-spring group-hover:scale-[1.05]" />
                 {g.video && (
                   <span aria-hidden="true" className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-surface/90 text-teal shadow-lift backdrop-blur transition-transform duration-500 ease-spring group-hover:scale-110">
@@ -54,7 +55,7 @@ export default function GalleryGrid() {
                 <figcaption className="absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-teal-deep/85 to-transparent p-4 pt-10 text-[13px] text-white opacity-0 transition-[opacity,transform] duration-500 ease-spring group-hover:translate-y-0 group-hover:opacity-100">
                   {g.caption}
                 </figcaption>
-              </button>
+              </button></TiltCard>
             </motion.figure>
           ))}
         </AnimatePresence>

@@ -10,6 +10,7 @@ import StickyBar from "@/components/StickyBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import TouchFeedback from "@/components/TouchFeedback";
 import Preloader from "@/components/Preloader";
+import AskPanel from "@/components/AskPanel";
 import { PHYSICIAN_LD, SITE_URL } from "@/lib/site";
 
 const fraunces = Fraunces({
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <StickyBar />
           <WhatsAppButton />
+          <AskPanel />
           <TouchFeedback />
         </MotionProvider>
       </body>

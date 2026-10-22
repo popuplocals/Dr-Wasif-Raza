@@ -5,13 +5,27 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
-import { STORIES } from "@/content/stories";
+import { STORIES, type Story } from "@/content/stories";
 import { EASE } from "@/lib/motion";
 import { GBP_REVIEW_LINK, GOOGLE_RATING } from "@/lib/site";
 
 /** Home testimonial carousel. Autoplays gently, pauses on hover, swipe-able. Sample items carry a visible badge. */
 export default function Stories() {
-  const items = STORIES.slice(0, 4);
+  const [live, setLive] = useState<Story[]>([]);
+  useEffect(() => {
+    let off = false;
+    fetch("/api/reviews")
+      .then((r) => r.json())
+      .then((j) => {
+        if (off || !Array.isArray(j.reviews) || !j.reviews.length) return;
+        setLive(j.reviews.map((v: { quote: string; who: string }) => ({ tag: "Google review", quote: v.quote, who: v.who, sample: false })));
+      })
+      .catch(() => {});
+    return () => {
+      off = true;
+    };
+  }, []);
+  const items = live.length ? live : STORIES.slice(0, 4);
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -21,7 +35,7 @@ export default function Stories() {
     return () => clearInterval(t);
   }, [paused, items.length]);
 
-  const s = items[i];
+  const s = items[i] ?? items[0];
   return (
     <section className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-28">
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">

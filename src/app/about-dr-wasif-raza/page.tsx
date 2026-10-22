@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import CtaBand from "@/components/CtaBand";
 import Journey from "@/components/about/Journey";
+import CredentialBadges from "@/components/about/CredentialBadges";
 import { breadcrumbLd, GMC, NMC } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -85,6 +86,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <CredentialBadges />
       <Journey />
 
       <section className="mx-auto max-w-[1400px] px-5 py-16 md:px-10 md:py-24">

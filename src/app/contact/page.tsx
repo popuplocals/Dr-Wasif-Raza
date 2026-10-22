@@ -3,6 +3,7 @@ import PageHero from "@/components/PageHero";
 import BookSection from "@/components/contact/BookSection";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import Checklist from "@/components/contact/Checklist";
 import { breadcrumbLd, GMC, NMC, ROLE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -22,14 +23,9 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-[1400px] gap-10 px-5 py-16 md:grid-cols-2 md:px-10 md:py-24">
           <div>
             <SectionHeading eyebrow="Before you come" title="What to bring to your first consultation" />
-            <ul className="mt-6 grid gap-3">
-              {BRING.map((b, i) => (
-                <Reveal key={b} index={i} y={12} duration={0.5} className="flex gap-3 rounded-2xl border border-line bg-surface p-4 text-[16px] text-ink">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-pale font-heading text-[13px] font-semibold text-amber-dark">{i + 1}</span>
-                  {b}
-                </Reveal>
-              ))}
-            </ul>
+            <div className="mt-6">
+              <Checklist />
+            </div>
           </div>
           <div>
             <SectionHeading eyebrow="Getting here" title="Lucknow–Kanpur Road" />
