@@ -60,7 +60,7 @@ export default function Hero() {
       <motion.div aria-hidden="true" style={{ background: spotlight }} className="absolute inset-0 hidden lg:block" />
       <div aria-hidden="true" className="absolute inset-0 opacity-[0.35] [background-image:radial-gradient(#0F4C5C22_1px,transparent_1px)] [background-size:26px_26px] [mask-image:linear-gradient(to_bottom,black,transparent)]" />
 
-      <div className="relative mx-auto grid min-h-[calc(100vh-112px)] max-w-[1400px] items-center gap-12 px-5 pb-20 pt-10 md:px-10 md:pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:pb-24">
+      <div className="relative mx-auto grid max-w-[1400px] items-center gap-10 px-5 pb-16 pt-8 md:px-10 md:pt-14 lg:min-h-[calc(100vh-112px)] lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:pb-24">
         {/* Copy */}
         <motion.div style={{ y: textY, opacity: textOpacity }} className="relative z-10">
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: EASE }} className="flex flex-wrap items-center gap-3">

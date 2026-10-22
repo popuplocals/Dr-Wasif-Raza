@@ -134,7 +134,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-[1400px] gap-12 px-5 py-16 md:px-10 md:py-24 lg:grid-cols-[1.1fr_0.9fr]">
+      <section className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)] gap-12 px-5 py-16 md:px-10 md:py-24 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <SectionHeading eyebrow="Research & academics" title="Published work" text="Former Assistant Professor of Surgery, Era's Lucknow Medical College. Has presented at AMASICON and UP Chapter ASI conferences." />
           <ol className="mt-8 flex flex-col">

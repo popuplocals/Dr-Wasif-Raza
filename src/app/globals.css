@@ -45,6 +45,8 @@
 }
 
 html { scroll-behavior: auto; color-scheme: light; -webkit-text-size-adjust: 100%; }
+/* Whole-site scale: the design is authored at 100% and rendered at ~90%, on every device. */
+html { zoom: 0.9; overflow-x: clip; max-width: 100%; }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
@@ -56,7 +58,7 @@ body {
   font-family: var(--font-body);
   font-size: 17px;
   line-height: 1.65;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 ::selection { background: var(--color-amber-pale); color: var(--color-teal-deep); }
@@ -67,8 +69,9 @@ body {
   [lang="hi"] h1, [lang="hi"] h2, [lang="hi"] h3 { font-family: var(--font-hindi); font-weight: 700; }
 }
 
+@layer components {
 /* Page transition */
-.page-enter { animation: page-enter 0.7s var(--ease-out-expo) both; }
+.page-enter { overflow-x: clip; animation: page-enter 0.7s var(--ease-out-expo) both; }
 @keyframes page-enter {
   from { opacity: 0; transform: translateY(14px); }
   to { opacity: 1; transform: translateY(0); }
@@ -133,6 +136,8 @@ html.wr-splash .wr-site { visibility: hidden; }
 /* Hide scrollbars on horizontal rails */
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
+
+}
 
 /* Mobile sticky bar spacing so the footer is never covered */
 @media (max-width: 767px) { body { padding-bottom: 64px; } }

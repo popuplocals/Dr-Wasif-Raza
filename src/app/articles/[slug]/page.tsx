@@ -63,7 +63,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
         </p>
       </PageHero>
 
-      <section className="mx-auto grid max-w-[1400px] gap-12 px-5 py-14 md:px-10 md:py-20 lg:grid-cols-[minmax(0,1fr)_320px]">
+      <section className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)] gap-12 px-5 py-14 md:px-10 md:py-20 lg:grid-cols-[minmax(0,1fr)_320px]">
         <article>
           <Reveal y={16} className={`prose-wr ${hi ? "font-hindi" : ""}`} dangerouslySetInnerHTML={{ __html: a.html }} />
 

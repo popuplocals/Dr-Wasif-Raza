@@ -73,7 +73,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
         </div>
       )}
 
-      <section className="mx-auto grid max-w-[1400px] gap-12 px-5 py-16 md:px-10 md:py-24 lg:grid-cols-[minmax(0,1fr)_340px]">
+      <section className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)] gap-12 px-5 py-16 md:px-10 md:py-24 lg:grid-cols-[minmax(0,1fr)_340px]">
         <article>
           {s.illustration && (
             <Reveal y={16} className="relative mb-10 aspect-[16/9] overflow-hidden rounded-3xl shadow-card lg:hidden">
