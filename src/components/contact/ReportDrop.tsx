@@ -23,7 +23,7 @@ export default function ReportDrop() {
 
   return (
     <section className="mt-12 rounded-3xl border border-teal/15 bg-teal-soft p-6 md:p-8" aria-label="Prepare your reports">
-      <p className="text-[12.5px] font-semibold uppercase tracking-[0.22em] text-teal">Prepare your reports</p>
+      <p className="text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] text-teal">Prepare your reports</p>
       <h2 className="mt-2 text-[clamp(22px,2.6vw,30px)]">Gather these, then send them on WhatsApp</h2>
       <ul className="mt-4 grid gap-2 sm:grid-cols-2">
         {NEEDED.map((n) => (

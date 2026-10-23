@@ -32,7 +32,6 @@ export default function SymptomChecker() {
 
   return (
     <section className="relative overflow-hidden bg-sage/40">
-      <div aria-hidden="true" className="absolute -right-32 top-10 h-[420px] w-[420px] rounded-full bg-amber-pale/70 blur-[100px]" />
       <div className="relative mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-28">
         <SectionHeading eyebrow="Symptom guide" title="When should you see a surgeon?" text="Tap what you've noticed. We'll show you the right page and the one rule for when not to wait." />
         <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
@@ -82,7 +81,7 @@ export default function SymptomChecker() {
                     <Image src={s.illustration ?? s.image} alt={s.imageAlt} fill sizes="(min-width: 1024px) 560px, 92vw" className="object-cover" />
                   </div>
                   <div className="p-6">
-                    <p className="text-[11.5px] font-semibold uppercase tracking-[0.18em] text-amber-dark">{s.eyebrow}</p>
+                    <p className="text-[11.5px] font-mono font-medium uppercase tracking-[0.12em] text-amber-dark">{s.eyebrow}</p>
                     <h3 className="mt-1 text-[24px]">{s.name}</h3>
                     <p className="mt-2 text-[15.5px] leading-relaxed text-ink-2">{s.card}</p>
                     {active.urgent && (

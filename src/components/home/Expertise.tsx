@@ -2,11 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import SectionHeading from "@/components/SectionHeading";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { SERVICES } from "@/content/services";
 import { EASE } from "@/lib/motion";
-import SpotlightCard from "@/components/ui/SpotlightCard";
 
 const ORDER = [
   "colon-cancer-surgeon-lucknow",
@@ -19,40 +18,92 @@ const ORDER = [
   "piles-treatment-lucknow",
 ];
 
-/** 8 photo cards. Each card rises in on scroll (staggered) and lifts with a slow image zoom on hover. */
+/**
+ * Services as a ruled index. On desktop a sticky preview on the right follows whichever row is under the pointer
+ * or, while scrolling, the row crossing the middle of the screen, so the picture and the list stay in step.
+ * On phones each row carries its own thumbnail.
+ */
 export default function Expertise() {
   const items = ORDER.map((s) => SERVICES.find((x) => x.slug === s)!).filter(Boolean);
+  const [active, setActive] = useState(0);
+  const rows = useRef<(HTMLLIElement | null)[]>([]);
+  const hovering = useRef(false);
+
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (hovering.current) return;
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            const i = rows.current.indexOf(e.target as HTMLLIElement);
+            if (i >= 0) setActive(i);
+          }
+        }
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+    rows.current.forEach((r) => r && io.observe(r));
+    return () => io.disconnect();
+  }, []);
+
+  const cur = items[active];
   return (
-    <section className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-28" id="expertise">
-      <SectionHeading eyebrow="Surgical expertise" title="Colorectal cancer first. Laparoscopic and robotic wherever it helps." text="Eight areas of practice at Apollo Medics Lucknow — every one explained in plain language before any decision." />
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {items.map((s, i) => (
-          <motion.div
-            key={s.slug}
-            initial={{ opacity: 0, y: 36 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: EASE, delay: (i % 4) * 0.09 }}
-          >
-            <SpotlightCard className="h-full rounded-2xl">
-            <Link href={`/${s.slug}`} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-card transition-[transform,box-shadow,border-color] duration-500 ease-spring hover:-translate-y-2 hover:border-teal/30 hover:shadow-lift">
-              <div className="relative aspect-[16/10] overflow-hidden bg-teal-soft">
-                <Image src={s.illustration ?? s.image} alt={s.imageAlt} fill sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-[1100ms] ease-spring group-hover:scale-[1.07]" />
-                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-teal-deep/40 via-transparent to-transparent opacity-70" />
-                <span className="absolute left-4 top-4 rounded-full bg-surface/90 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-teal backdrop-blur">{s.eyebrow}</span>
-              </div>
-              <div className="flex flex-1 flex-col p-5">
-                <h3 className="text-[20px] leading-snug transition-colors duration-300 group-hover:text-teal">{s.slug === "piles-treatment-lucknow" ? "Piles, Fissure & Fistula Surgery" : s.name}</h3>
-                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-ink-2">{s.card}</p>
-                <span className="mt-4 inline-flex items-center gap-2 text-[14px] font-semibold text-teal">
-                  Learn more
-                  <span aria-hidden="true" className="transition-transform duration-300 ease-spring group-hover:translate-x-1">→</span>
+    <section className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-32" id="expertise">
+      <div className="flex flex-wrap items-end justify-between gap-4 border-b border-teal-deep/70 pb-6">
+        <div>
+          <p className="font-mono text-[12px] font-medium uppercase tracking-[0.12em] text-teal">Surgical practice</p>
+          <h2 className="mt-3 max-w-[20ch] text-[clamp(32px,4.2vw,58px)] leading-[1.04] tracking-[-0.025em]">Colorectal cancer first. Keyhole and robotic wherever it helps.</h2>
+        </div>
+        <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-ink-2">0{items.length} areas of practice</p>
+      </div>
+
+      <div className="grid gap-12 lg:grid-cols-[1fr_440px] lg:gap-16">
+        <ul onMouseEnter={() => (hovering.current = true)} onMouseLeave={() => (hovering.current = false)}>
+          {items.map((s, i) => (
+            <li
+              key={s.slug}
+              ref={(el) => {
+                rows.current[i] = el;
+              }}
+              onMouseEnter={() => setActive(i)}
+              onFocus={() => setActive(i)}
+            >
+              <Link href={`/${s.slug}`} className="group grid grid-cols-[44px_1fr_auto] items-start gap-x-4 border-b border-line py-6 transition-[padding,background-color] duration-500 ease-spring hover:bg-sage/30 md:grid-cols-[64px_1fr_auto] md:py-8 lg:hover:pl-3">
+                <span className={`pt-2 font-mono text-[13px] transition-colors duration-300 ${active === i ? "text-amber-dark" : "text-ink-2"}`}>0{i + 1}</span>
+                <span>
+                  <span className={`block font-heading text-[clamp(24px,2.8vw,38px)] leading-[1.08] tracking-[-0.02em] transition-colors duration-300 ${active === i ? "text-teal-deep" : "text-teal-deep/70"}`}>
+                    {s.slug === "piles-treatment-lucknow" ? "Piles, fissure & fistula" : s.name}
+                  </span>
+                  <span className="mt-2 block max-w-[52ch] text-[15.5px] leading-relaxed text-ink-2">{s.card}</span>
+                  <span className="relative mt-4 block aspect-[16/9] w-full max-w-[420px] overflow-hidden bg-sage lg:hidden">
+                    <Image src={s.illustration ?? s.image} alt={s.imageAlt} fill sizes="(min-width: 640px) 420px, 92vw" className="object-cover" />
+                  </span>
                 </span>
-              </div>
-            </Link>
-            </SpotlightCard>
-          </motion.div>
-        ))}
+                <span aria-hidden="true" className="pt-1 font-heading text-[26px] text-teal-deep transition-transform duration-500 ease-spring group-hover:translate-x-1.5">
+                  →
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="relative hidden lg:block">
+          <div className="sticky top-28">
+            <div className="relative aspect-[4/5] overflow-hidden bg-sage">
+              <AnimatePresence mode="popLayout" initial={false}>
+                <motion.div key={cur.slug} initial={{ opacity: 0, scale: 1.06 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6, ease: EASE }} className="absolute inset-0">
+                  <Image src={cur.illustration ?? cur.image} alt={cur.imageAlt} fill sizes="440px" className="object-cover" />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+            <div className="mt-3 flex items-baseline justify-between gap-4 font-mono text-[12px] uppercase tracking-[0.08em] text-ink-2">
+              <span>
+                0{active + 1} / 0{items.length}
+              </span>
+              <span>Illustration, not a patient image</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

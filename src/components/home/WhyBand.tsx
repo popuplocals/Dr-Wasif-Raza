@@ -23,7 +23,6 @@ export default function WhyBand() {
 
   return (
     <section ref={ref} className="relative isolate overflow-hidden bg-teal text-bg">
-      <div aria-hidden="true" className="absolute -left-32 top-1/3 h-[480px] w-[480px] rounded-full bg-teal-deep/80 blur-[100px]" />
       <div className="relative mx-auto grid max-w-[1400px] gap-14 px-5 py-20 md:px-10 md:py-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
         <div>
           <SectionHeading eyebrow="Why patients choose Dr. Wasif Raza" title="Trained where colorectal surgery was defined. Practising it in Lucknow." light />

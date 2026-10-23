@@ -37,8 +37,6 @@ export default function PageHero({ breadcrumbs, eyebrow, heading, subtitle, imag
 
   return (
     <section ref={ref} className={`relative isolate overflow-hidden bg-teal-deep text-bg ${compact ? "pb-14 pt-10 md:pb-16 md:pt-14" : "pb-16 pt-10 md:pb-24 md:pt-16"}`} lang={lang}>
-      <div aria-hidden="true" className="absolute -left-40 top-0 h-[520px] w-[520px] rounded-full bg-teal/70 blur-[110px]" />
-      <div aria-hidden="true" className="absolute -bottom-40 right-[20%] h-[360px] w-[360px] rounded-full bg-amber/10 blur-[100px]" />
       <div className="relative mx-auto grid max-w-[1400px] gap-10 px-5 md:px-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-center">
         <motion.div style={{ y: textY }}>
           {breadcrumbs && breadcrumbs.length > 0 && (
@@ -60,7 +58,7 @@ export default function PageHero({ breadcrumbs, eyebrow, heading, subtitle, imag
           {eyebrow && (
             <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, ease: EASE }} className="mb-5 flex items-center gap-3">
               <motion.span initial={{ width: 0 }} animate={{ width: 28 }} transition={{ duration: 0.6, ease: EASE, delay: 0.1 }} className="h-px bg-amber" />
-              <span className="text-[12.5px] font-semibold uppercase tracking-[0.22em] text-amber">{eyebrow}</span>
+              <span className="text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] text-amber">{eyebrow}</span>
             </motion.div>
           )}
           <h1 className="max-w-[16ch] text-[clamp(34px,5vw,60px)] font-semibold leading-[1.08] text-white">

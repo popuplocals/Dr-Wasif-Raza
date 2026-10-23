@@ -53,7 +53,7 @@ export default function Preloader() {
             y="52"
             textAnchor="middle"
             fill="#FAFAF7"
-            fontFamily="var(--font-fraunces), Georgia, serif"
+            fontFamily="var(--font-newsreader), Georgia, serif"
             fontSize="30"
             fontWeight="600"
             style={{ opacity: 0, animation: "wr-fade 0.6s 0.45s forwards" }}

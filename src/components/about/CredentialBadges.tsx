@@ -27,11 +27,11 @@ export default function CredentialBadges() {
               <circle cx="60" cy="60" r="56" fill="#E7F0EE" />
               <motion.circle cx="60" cy="60" r={R} fill="none" stroke="#E6A23C" strokeWidth="2.5" strokeDasharray={C} initial={{ strokeDashoffset: C }} whileInView={{ strokeDashoffset: 0 }} viewport={{ once: true }} transition={{ duration: 1.3, ease: EASE, delay: i * 0.1 }} transform="rotate(-90 60 60)" />
               <circle cx="60" cy="60" r="44" fill="none" stroke="#0F4C5C" strokeOpacity="0.25" strokeDasharray="2 5" />
-              <motion.text x="60" y="68" textAnchor="middle" fontFamily="var(--font-fraunces), Georgia, serif" fontSize={b.abbr.length > 3 ? 24 : 28} fontWeight="600" fill="#0A3540" initial={{ opacity: 0, y: 6 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.6 + i * 0.1, duration: 0.6 }}>
+              <motion.text x="60" y="68" textAnchor="middle" fontFamily="var(--font-newsreader), Georgia, serif" fontSize={b.abbr.length > 3 ? 24 : 28} fontWeight="600" fill="#0A3540" initial={{ opacity: 0, y: 6 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.6 + i * 0.1, duration: 0.6 }}>
                 {b.abbr}
               </motion.text>
             </motion.svg>
-            <p className="mt-3 text-[11.5px] font-semibold uppercase tracking-[0.16em] text-amber-dark">{b.note}</p>
+            <p className="mt-3 text-[11.5px] font-mono font-medium uppercase tracking-[0.12em] text-amber-dark">{b.note}</p>
             <p className="mt-1 max-w-[22ch] text-[14.5px] leading-snug text-ink-2">{b.line}</p>
           </Reveal>
         ))}

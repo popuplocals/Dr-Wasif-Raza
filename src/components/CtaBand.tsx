@@ -6,8 +6,6 @@ import { PhoneIcon, WaIcon } from "@/components/Navbar";
 export default function CtaBand({ title = "Book a consultation", text = "Not sure what you need? Call and we will guide you. Bring your reports, scans and a family member." }: { title?: string; text?: string }) {
   return (
     <section className="relative overflow-hidden bg-teal text-bg">
-      <div aria-hidden="true" className="absolute -right-24 -top-24 h-[360px] w-[360px] rounded-full bg-amber/15 blur-[90px]" />
-      <div aria-hidden="true" className="absolute -bottom-32 left-[10%] h-[320px] w-[320px] rounded-full bg-teal-deep/80 blur-[80px]" />
       <div className="relative mx-auto flex max-w-[1400px] flex-col gap-8 px-5 py-16 md:flex-row md:items-center md:justify-between md:px-10 md:py-20">
         <Reveal x={-24} y={0}>
           <h2 className="text-[clamp(28px,3.4vw,42px)] text-white">{title}</h2>

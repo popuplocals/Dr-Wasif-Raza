@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/home/Hero";
-import Marquee from "@/components/Marquee";
 import AboutStrip from "@/components/home/AboutStrip";
-import Numbers from "@/components/home/Numbers";
 import Theatre from "@/components/home/Theatre";
 import Expertise from "@/components/home/Expertise";
 import SymptomChecker from "@/components/home/SymptomChecker";
@@ -12,7 +10,7 @@ import WhyBand from "@/components/home/WhyBand";
 import Credentials from "@/components/home/Credentials";
 import Stories from "@/components/home/Stories";
 import GalleryStrip from "@/components/home/GalleryStrip";
-import ArticleCard from "@/components/ArticleCard";
+import ArticleIndex from "@/components/home/ArticleIndex";
 import Faq from "@/components/Faq";
 import SectionHeading from "@/components/SectionHeading";
 import BookSection from "@/components/contact/BookSection";
@@ -28,17 +26,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const STRIP = ["FRCS — Royal College of Physicians & Surgeons of Glasgow", "FACS — American College of Surgeons", "MCh — University of East Anglia", "Apollo Medics Superspeciality Hospitals, Lucknow", "8 years in the UK NHS", "Robotic surgery on the da Vinci Xi"];
-
 const KNOW = ["colon-cancer-vs-rectal-cancer", "laparoscopic-vs-robotic-surgery", "early-signs-colorectal-cancer"];
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Marquee items={STRIP} />
       <AboutStrip />
-      <Numbers />
       <Theatre />
       <Expertise />
       <Statement />
@@ -48,19 +42,7 @@ export default function HomePage() {
       <Stories />
       <GalleryStrip />
 
-      <section className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-28">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeading eyebrow="Know your health" title="Plain-language articles, reviewed by Dr. Raza." />
-          <Link href="/articles" className="btn btn-ghost">
-            All 12 articles <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {KNOW.map((s, i) => (
-            <ArticleCard key={s} a={ARTICLE_BY_SLUG[s]} index={i} />
-          ))}
-        </div>
-      </section>
+      <ArticleIndex items={KNOW.map((s) => ARTICLE_BY_SLUG[s])} />
 
       <section className="bg-sage/40">
         <div className="mx-auto grid max-w-[1400px] gap-10 px-5 py-20 md:px-10 md:py-28 lg:grid-cols-[0.8fr_1.2fr]">

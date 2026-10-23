@@ -34,7 +34,7 @@ export default function Theatre() {
         <div className="sticky top-0 flex h-screen items-center overflow-hidden">
           <div className="mx-auto grid w-full max-w-[1400px] grid-cols-[0.9fr_1.1fr] items-center gap-16 px-10">
             <div>
-              <p className="flex items-center gap-3 text-[12.5px] font-semibold uppercase tracking-[0.22em] text-amber">
+              <p className="flex items-center gap-3 text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] text-amber">
                 <span className="h-px w-7 bg-amber" /> In the operating theatre
               </p>
               <h2 className="mt-4 text-[clamp(30px,3.6vw,46px)] text-white">Real footage from Apollo Medics. No patient is identifiable.</h2>
@@ -56,7 +56,7 @@ export default function Theatre() {
 
       {/* Phones and tablets: swipe rail */}
       <div className="px-5 py-16 lg:hidden">
-        <p className="flex items-center gap-3 text-[12.5px] font-semibold uppercase tracking-[0.22em] text-amber">
+        <p className="flex items-center gap-3 text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] text-amber">
           <span className="h-px w-7 bg-amber" /> In the operating theatre
         </p>
         <h2 className="mt-4 text-[clamp(26px,6vw,34px)] text-white">Real footage from Apollo Medics.</h2>

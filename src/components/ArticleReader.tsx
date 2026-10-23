@@ -42,7 +42,7 @@ export default function ArticleReader({ lang, counterpart, children }: Props) {
   return (
     <div>
       <div className="mb-6 flex flex-wrap items-center gap-2 rounded-2xl border border-line bg-surface p-2.5 shadow-card" role="toolbar" aria-label="Reading tools">
-        <span className="px-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-ink-2">Text</span>
+        <span className="px-2 text-[12px] font-mono font-medium uppercase tracking-[0.12em] text-ink-2">Text</span>
         {SIZES.map((s, i) => (
           <button key={s} type="button" aria-pressed={size === s} onClick={() => setSize(s)} className={btn} aria-label={`Text size ${i + 1}`}>
             <span style={{ fontSize: 11 + i * 2.5 }}>A</span>

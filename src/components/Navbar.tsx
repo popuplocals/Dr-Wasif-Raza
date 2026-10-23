@@ -116,7 +116,7 @@ export default function Navbar() {
           <div
             className={`pointer-events-auto relative mx-auto border transition-[height,max-width,margin,border-radius,background-color,box-shadow,border-color] duration-[450ms] ease-spring ${
               scrolled
-                ? "mt-3 h-[60px] max-w-[84rem] rounded-full border-teal/10 bg-surface/85 shadow-[0_10px_36px_-8px_rgba(15,76,92,0.25)] backdrop-blur-[18px] backdrop-saturate-[1.3]"
+                ? "mt-3 h-[60px] max-w-[84rem] rounded-md border-teal/10 bg-surface/85 shadow-[0_10px_36px_-8px_rgba(15,76,92,0.25)] backdrop-blur-[18px] backdrop-saturate-[1.3]"
                 : "mt-0 h-[76px] max-w-none rounded-none border-transparent border-b-line bg-bg"
             }`}
           >

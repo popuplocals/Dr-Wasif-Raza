@@ -31,7 +31,7 @@ export default function ArticleCard({ a, index = 0, number }: { a: Article; inde
           <span className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-soft text-teal transition-transform duration-500 ease-spring group-hover:rotate-6 group-hover:scale-110">{ICONS[a.category] ?? <ColonIcon />}</span>
           {number !== undefined && <span className="font-heading text-[13px] tracking-[0.16em] text-ink-2">{String(number).padStart(2, "0")}</span>}
         </div>
-        <p className="mt-5 text-[11.5px] font-semibold uppercase tracking-[0.16em] text-amber-dark">
+        <p className="mt-5 text-[11.5px] font-mono font-medium uppercase tracking-[0.12em] text-amber-dark">
           {a.category}
           {a.lang === "hi" && " · हिन्दी"}
         </p>

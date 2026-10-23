@@ -2,63 +2,76 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import Reveal from "@/components/Reveal";
-import SectionHeading from "@/components/SectionHeading";
-import { EASE } from "@/lib/motion";
 
-const TIMELINE = [
-  { place: "Lucknow", what: "MS — General Surgery" },
-  { place: "Liverpool", what: "Specialist Registrar, Royal Liverpool" },
-  { place: "Norwich", what: "MCh Colon & Rectal Surgery, UEA" },
-  { place: "Lucknow", what: "Associate Director, Apollo Medics" },
+const LEDGER = [
+  ["Lucknow", "MS, General Surgery"],
+  ["Liverpool", "Specialist Registrar, Royal Liverpool University Hospital"],
+  ["Norwich", "MCh, Colon & Rectal Surgery, University of East Anglia"],
+  ["Wales", "Colorectal Specialist, Betsi Cadwaladr University Health Board"],
+  ["Lucknow", "Associate Director, Apollo Medics Superspeciality Hospitals"],
 ];
 
+/** Editorial intro: a tall photograph that moves against the text as you scroll, then a ruled career ledger. */
 export default function AboutStrip() {
-  return (
-    <section className="relative mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-28">
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-20">
-        <div>
-          <SectionHeading eyebrow="The surgeon behind the credentials" title="A specialist surgeon for colon & rectal cancer in Lucknow" />
-          <Reveal y={20} delay={0.15} className="mt-6 space-y-4 text-[17px] leading-[1.75] text-ink md:text-[18px]">
-            <p>When a diagnosis of colon or rectal cancer arrives, the surgeon you choose shapes everything that follows — the surgery, the recovery, and the outcome.</p>
-            <p>
-              Dr. Wasif Raza is a colon and rectal cancer surgeon, laparoscopic and robotic surgery specialist, and general surgeon with <b>15 years of experience</b> — including <b>8 years in the UK&apos;s National Health Service</b> at the Royal Liverpool University Hospital, a major NHS tertiary colorectal unit. He holds an <b>MCh in Colon &amp; Rectal Surgery</b> from the University of East Anglia, and holds fellowships of both the Royal College of Physicians &amp; Surgeons of Glasgow (FRCS) and the American College of Surgeons (FACS).
-            </p>
-            <p>
-              Today, as Associate Director of Colorectal &amp; General Surgery at Apollo Medics Lucknow, he performs laparoscopic and robotic (da Vinci Xi) surgery for colorectal cancer, hernia, gallbladder and GI conditions — with one promise: <b>clear answers, honest advice, and the least invasive treatment that works.</b>
-            </p>
-          </Reveal>
-          <Reveal y={16} delay={0.25} className="mt-8">
-            <Link href="/about-dr-wasif-raza" className="btn btn-teal">
-              About Dr. Raza <span aria-hidden="true">→</span>
-            </Link>
-          </Reveal>
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const p = useSpring(scrollYProgress, { stiffness: 100, damping: 30, mass: 0.4 });
+  const imgY = useTransform(p, [0, 1], reduce ? [0, 0] : [-50, 50]);
+  const reveal = useTransform(p, [0.1, 0.45], ["inset(0% 0% 100% 0%)", "inset(0% 0% 0% 0%)"]);
 
-          {/* Mini timeline */}
-          <div className="relative mt-12">
-            <motion.div initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 1.2, ease: EASE }} className="absolute left-5 right-5 top-5 hidden h-0 origin-left border-t-2 border-dashed border-sage-deep sm:block" />
-            <ol className="grid gap-5 sm:grid-cols-4 sm:gap-3">
-              {TIMELINE.map((t, i) => (
-                <Reveal key={`${t.place}-${i}`} index={i} y={14} className="relative flex items-start gap-3 sm:block">
-                  <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-amber bg-bg font-heading text-[13px] font-semibold text-teal">{i + 1}</span>
-                  <div className="sm:mt-3">
-                    <p className="font-heading text-[16px] font-semibold text-teal-deep">{t.place}</p>
-                    <p className="text-[13.5px] leading-snug text-ink-2">{t.what}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </ol>
+  return (
+    <section ref={ref} className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-32">
+      <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="lg:col-span-5">
+          <div className="lg:sticky lg:top-28">
+            <motion.div style={{ clipPath: reduce ? undefined : reveal }} className="relative aspect-[3/4] overflow-hidden bg-sage">
+              <motion.div style={{ y: imgY }} className="absolute inset-[-8%]">
+                <Image src="/photos/scrubs-ot.webp" alt="Dr Wasif Raza in scrubs outside the operating theatre at Apollo Medics Lucknow" fill sizes="(min-width: 1024px) 520px, 92vw" className="object-cover" style={{ objectPosition: "center 30%" }} />
+              </motion.div>
+            </motion.div>
+            <p className="mt-3 font-mono text-[12px] uppercase tracking-[0.08em] text-ink-2">Outside the operating theatre, Apollo Medics Lucknow</p>
           </div>
         </div>
 
-        <Reveal x={30} y={0} scale={0.97} duration={0.9} className="relative mx-auto w-full max-w-[460px]">
-          <div className="arch relative aspect-[4/5] shadow-lift">
-            <Image src="/photos/at-desk.webp" alt="Dr Wasif Raza explaining colorectal cancer treatment to a patient in Lucknow" fill sizes="(min-width: 1024px) 460px, 90vw" className="object-cover transition-transform duration-[1200ms] ease-spring hover:scale-[1.04]" />
+        <div className="lg:col-span-7 lg:pt-4">
+          <Reveal y={14}>
+            <p className="font-mono text-[12px] font-medium uppercase tracking-[0.12em] text-teal">The surgeon</p>
+          </Reveal>
+          <Reveal y={22} delay={0.05}>
+            <h2 className="mt-4 max-w-[18ch] text-[clamp(32px,4.2vw,58px)] leading-[1.04] tracking-[-0.025em]">The surgeon you choose shapes everything that follows.</h2>
+          </Reveal>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 md:gap-10">
+            <Reveal y={16} delay={0.1} className="text-[17px] leading-[1.75] text-ink">
+              <p>
+                When a diagnosis of colon or rectal cancer arrives, the surgery, the recovery and the outcome all depend on who is holding the instruments. Dr. Wasif Raza has <b>15 years of experience</b>, including <b>8 years in the UK&apos;s National Health Service</b>.
+              </p>
+            </Reveal>
+            <Reveal y={16} delay={0.18} className="text-[17px] leading-[1.75] text-ink">
+              <p>
+                He holds an MCh in Colon &amp; Rectal Surgery and fellowships of both the Royal College of Physicians &amp; Surgeons of Glasgow and the American College of Surgeons. Today he performs laparoscopic and robotic surgery at Apollo Medics, with one promise: <b>clear answers, honest advice, the least invasive treatment that works.</b>
+              </p>
+            </Reveal>
           </div>
-          <span aria-hidden="true" className="absolute -right-4 -top-4 -z-10 h-full w-full rounded-[999px_999px_24px_24px] bg-sage" />
-          <figcaption className="mt-4 text-center text-[13px] text-ink-2">In the OPD, Apollo Medics Lucknow</figcaption>
-        </Reveal>
+
+          <dl className="mt-12 border-t border-teal-deep/70">
+            {LEDGER.map(([place, what], i) => (
+              <Reveal key={`${place}-${i}`} y={10} duration={0.5} index={Math.min(i, 4)} className="grid grid-cols-[110px_1fr] gap-4 border-b border-line py-4 md:grid-cols-[160px_1fr]">
+                <dt className="font-heading text-[22px] text-teal-deep">{place}</dt>
+                <dd className="self-center text-[15px] leading-snug text-ink-2">{what}</dd>
+              </Reveal>
+            ))}
+          </dl>
+
+          <Reveal y={12} delay={0.1} className="mt-10">
+            <Link href="/about-dr-wasif-raza" className="font-mono text-[13px] font-medium uppercase tracking-[0.1em] text-teal-deep underline decoration-amber decoration-2 underline-offset-[8px] transition-colors hover:text-teal">
+              Full profile →
+            </Link>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

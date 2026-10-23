@@ -42,7 +42,7 @@ export default function Journey() {
         <div className="mb-12 max-w-[700px]">
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-7 bg-amber" />
-            <span className="text-[12.5px] font-semibold uppercase tracking-[0.22em] text-amber">The journey</span>
+            <span className="text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] text-amber">The journey</span>
           </div>
           <h2 className="text-[clamp(28px,3.6vw,44px)] text-white">Lucknow → Liverpool → Norwich → Lucknow.</h2>
         </div>
@@ -56,7 +56,7 @@ export default function Journey() {
               </AnimatePresence>
               <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-teal-deep/70 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
-                <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-amber">{c.place}</p>
+                <p className="text-[12px] font-mono font-medium uppercase tracking-[0.12em] text-amber">{c.place}</p>
               </div>
             </div>
             <div className="mt-6 flex items-center gap-3" aria-hidden="true">

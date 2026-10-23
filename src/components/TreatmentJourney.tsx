@@ -16,7 +16,7 @@ export default function TreatmentJourney({ group }: { group: ServiceGroup }) {
 
   return (
     <section className="mt-16 rounded-3xl border border-line bg-surface p-6 shadow-card md:p-10" aria-label="Treatment journey">
-      <p className="text-[12.5px] font-semibold uppercase tracking-[0.22em] text-teal">What happens next</p>
+      <p className="text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] text-teal">What happens next</p>
       <h2 className="mt-2 text-[clamp(24px,3vw,34px)]">{heading}</h2>
       <div ref={ref} className="relative mt-8 pl-10 md:pl-14">
         <span aria-hidden="true" className="absolute bottom-2 left-[15px] top-2 w-0 border-l-2 border-dashed border-sage-deep md:left-[21px]" />
@@ -40,7 +40,7 @@ export default function TreatmentJourney({ group }: { group: ServiceGroup }) {
               >
                 {i + 1}
               </motion.span>
-              <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-amber-dark">{s.when}</p>
+              <p className="text-[12px] font-mono font-medium uppercase tracking-[0.12em] text-amber-dark">{s.when}</p>
               <h3 className="mt-0.5 text-[20px] md:text-[22px]">{s.title}</h3>
               <p className="mt-1.5 max-w-[60ch] text-[15.5px] leading-relaxed text-ink-2">{s.text}</p>
             </motion.li>

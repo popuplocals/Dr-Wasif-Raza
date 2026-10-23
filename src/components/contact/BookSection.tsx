@@ -19,7 +19,7 @@ export default function BookSection({ id = "book" }: { id?: string }) {
       <div className="pointer-events-none relative mx-auto grid max-w-[1400px] gap-8 px-5 py-16 md:px-10 md:py-24 lg:grid-cols-[1fr_0.95fr] lg:items-start">
         {/* Details */}
         <Reveal y={24} className="pointer-events-auto rounded-3xl border border-white/60 bg-surface/92 p-6 shadow-lift backdrop-blur-md md:p-9">
-          <p className="flex items-center gap-3 text-[12.5px] font-semibold uppercase tracking-[0.22em] text-teal">
+          <p className="flex items-center gap-3 text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] text-teal">
             <span className="h-px w-7 bg-amber" /> Book your consultation
           </p>
           <h2 className="mt-4 text-[clamp(26px,3.2vw,40px)]">“I wish I had come sooner.”</h2>

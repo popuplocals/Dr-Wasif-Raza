@@ -23,7 +23,7 @@ export default function RecoveryCalculator({ slug }: { slug: string }) {
 
   return (
     <section className="mt-12 rounded-3xl border border-teal/15 bg-teal-soft p-6 md:p-8" aria-label="Recovery planner">
-      <p className="text-[12.5px] font-semibold uppercase tracking-[0.22em] text-teal">Recovery planner</p>
+      <p className="text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] text-teal">Recovery planner</p>
       <h2 className="mt-2 text-[clamp(22px,2.6vw,30px)]">When can I…? — {data.name}</h2>
       <label className="mt-5 flex flex-wrap items-center gap-3 text-[15px] font-semibold text-teal-deep">
         Planned date of surgery

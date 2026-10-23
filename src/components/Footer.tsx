@@ -6,7 +6,6 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="relative overflow-hidden bg-teal-deep text-bg/80">
-      <div aria-hidden="true" className="absolute -right-32 -top-32 h-[420px] w-[420px] rounded-full bg-teal/60 blur-[90px]" />
       <div className="relative mx-auto max-w-[1400px] px-5 pb-10 pt-16 md:px-10 md:pt-20">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>

@@ -51,7 +51,7 @@ export default function GalleryGrid() {
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
                   </span>
                 )}
-                {g.video && <span className="absolute left-3 top-3 rounded-full bg-teal-deep/80 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white backdrop-blur">Video</span>}
+                {g.video && <span className="absolute left-3 top-3 rounded-full bg-teal-deep/80 px-2.5 py-1 text-[11px] font-mono font-medium uppercase tracking-[0.12em] text-white backdrop-blur">Video</span>}
                 <figcaption className="absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-teal-deep/85 to-transparent p-4 pt-10 text-[13px] text-white opacity-0 transition-[opacity,transform] duration-500 ease-spring group-hover:translate-y-0 group-hover:opacity-100">
                   {g.caption}
                 </figcaption>

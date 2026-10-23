@@ -28,7 +28,7 @@ export default function AnatomyViewer({ slug, src, alt }: { slug: string; src: s
             <span className={`relative flex h-7 w-7 items-center justify-center rounded-full border-2 border-white text-[12px] font-bold shadow-lift transition-transform duration-300 ease-spring group-hover/dot:scale-110 ${open === i ? "scale-110 bg-amber text-[#1f1a10]" : "bg-teal text-white"}`}>{i + 1}</span>
           </button>
         ))}
-        <span className="absolute bottom-3 left-3 rounded-full bg-teal-deep/80 px-3 py-1 text-[11.5px] font-semibold uppercase tracking-[0.12em] text-white backdrop-blur">Tap a point</span>
+        <span className="absolute bottom-3 left-3 rounded-full bg-teal-deep/80 px-3 py-1 text-[11.5px] font-mono font-medium uppercase tracking-[0.12em] text-white backdrop-blur">Tap a point</span>
       </div>
       <div className="min-h-[104px] p-5">
         <AnimatePresence mode="wait">

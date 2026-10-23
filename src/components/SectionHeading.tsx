@@ -17,7 +17,7 @@ export default function SectionHeading({ eyebrow, title, text, align = "left", l
         <Reveal y={10} duration={0.6}>
           <div className={`mb-4 flex items-center gap-3 ${center ? "justify-center" : ""}`}>
             <span className="h-px w-7 bg-amber" />
-            <span className={`text-[12.5px] font-semibold uppercase tracking-[0.22em] ${light ? "text-amber" : "text-teal"}`}>{eyebrow}</span>
+            <span className={`text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] ${light ? "text-amber" : "text-teal"}`}>{eyebrow}</span>
             {center && <span className="h-px w-7 bg-amber" />}
           </div>
         </Reveal>

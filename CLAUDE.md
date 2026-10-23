@@ -44,3 +44,9 @@ No stock photos. No Montserrat/Poppins. No "best / painless / permanent / guaran
 ## Round 4 (23 Oct 2026): home-page operating-theatre section
 - `home/Theatre.tsx` sits after the Numbers band. Desktop: pinned stage, 380vh tall; the four clips in `public/videos/ot-laparoscopic-1..4.mp4` enter, play and hand over as scroll progress moves, with captions and progress bars driven by the same scroll value (scrubs both ways). Phones: swipe rail, a clip plays when 60% visible.
 - Clips 3 and 4 show an open surgical field with blood. They sit behind a blurred "Contains surgical footage / Tap to view" cover (`sensitive: true`). Ask Dr. Raza whether to publish them at all; remove the flag or the clip in `Theatre.tsx` accordingly.
+
+## Round 5 (23 Oct 2026): type system and home-page redesign
+- Fonts: Newsreader (headings, optical-size serif) + IBM Plex Sans (body) + IBM Plex Mono (eyebrow labels, captions, numerals) + Noto Sans Devanagari (Hindi). Replaced Fraunces + Source Sans 3. CSS vars: --font-newsreader, --font-plex, --font-plex-mono (mapped in globals.css @theme).
+- System: squarer radii (Tailwind radius tokens lowered; `.btn` 3px), softer shadows, no blurred colour blobs or gradient washes, mono eyebrows, ruled (hairline) layouts instead of card grids.
+- Home order: Hero (editorial, scroll-linked frame/photo), AboutStrip (editorial intro + career ledger), Theatre (video), Expertise (ruled index with sticky preview that follows hover/scroll), Statement, SymptomChecker, WhyBand, Credentials, Stories, GalleryStrip, ArticleIndex, FAQ, Book. Marquee and Numbers components are no longer used on the home page.
+- Still time-triggered rather than scroll-scrubbed: the generic `Reveal` entrances. Scroll-linked: Hero, AboutStrip, Expertise, Theatre, Statement, TreatmentJourney, Credentials.

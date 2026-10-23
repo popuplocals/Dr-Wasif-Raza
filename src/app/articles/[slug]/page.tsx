@@ -85,7 +85,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
 
           {service && (
             <Reveal y={14} className="mt-10 rounded-2xl border border-teal/20 bg-teal-soft p-5">
-              <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-teal">Treatment information</p>
+              <p className="text-[12px] font-mono font-medium uppercase tracking-[0.12em] text-teal">Treatment information</p>
               <Link href={`/${service.slug}`} className="mt-1 inline-flex items-center gap-2 font-heading text-[20px] font-semibold text-teal-deep hover:text-teal">
                 {service.name} <span aria-hidden="true">→</span>
               </Link>
@@ -119,7 +119,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
 
         <aside className="lg:sticky lg:top-28 lg:self-start">
           <Reveal y={20} className="rounded-3xl bg-teal-deep p-6 text-bg shadow-lift">
-            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-amber">Book a consultation</p>
+            <p className="text-[12px] font-mono font-medium uppercase tracking-[0.12em] text-amber">Book a consultation</p>
             <p className="mt-3 text-[15px] text-bg/80">{HOSPITAL}, Lucknow</p>
             <a href={PHONE_TEL} className="mt-2 block font-heading text-[26px] font-semibold text-white hover:text-amber">
               {PHONE_DISPLAY}

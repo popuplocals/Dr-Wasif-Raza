@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Source_Sans_3, Noto_Sans_Devanagari } from "next/font/google";
+import { Newsreader, IBM_Plex_Sans, IBM_Plex_Mono, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -13,18 +13,24 @@ import Preloader from "@/components/Preloader";
 import AskPanel from "@/components/AskPanel";
 import { PHYSICIAN_LD, SITE_URL } from "@/lib/site";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
   weight: "variable",
   style: ["normal", "italic"],
-  axes: ["opsz", "SOFT"],
+  axes: ["opsz"],
 });
 
-const source = Source_Sans_3({
-  variable: "--font-source",
+const plexSans = IBM_Plex_Sans({
+  variable: "--font-plex",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 const devanagari = Noto_Sans_Devanagari({
@@ -60,7 +66,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${source.variable} ${devanagari.variable} antialiased`} suppressHydrationWarning>
+    <html lang="en" className={`${newsreader.variable} ${plexSans.variable} ${plexMono.variable} ${devanagari.variable} antialiased`} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
