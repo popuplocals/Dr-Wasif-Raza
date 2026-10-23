@@ -40,3 +40,7 @@ No stock photos. No Montserrat/Poppins. No "best / painless / permanent / guaran
 - Site-wide: page-transition wipe (`template.tsx` + `.page-wipe`), `AskPanel` (FAQ matcher, bottom-left), `ArticleReader` (text size, Listen, EN/HI counterpart link), `about/CredentialBadges`, tilting gallery tiles.
 - Live Google reviews: `/api/reviews` uses the Places API. Set GOOGLE_PLACES_API_KEY and GOOGLE_PLACE_ID on Vercel (Place ID is not known yet; Maps CID is 3084555660444796987). Until then the sample stories show.
 - Not built: animated stat bars. Hotspot positions were placed by eye against the generated images; re-check if illustrations are regenerated.
+
+## Round 4 (23 Oct 2026): home-page operating-theatre section
+- `home/Theatre.tsx` sits after the Numbers band. Desktop: pinned stage, 380vh tall; the four clips in `public/videos/ot-laparoscopic-1..4.mp4` enter, play and hand over as scroll progress moves, with captions and progress bars driven by the same scroll value (scrubs both ways). Phones: swipe rail, a clip plays when 60% visible.
+- Clips 3 and 4 show an open surgical field with blood. They sit behind a blurred "Contains surgical footage / Tap to view" cover (`sensitive: true`). Ask Dr. Raza whether to publish them at all; remove the flag or the clip in `Theatre.tsx` accordingly.

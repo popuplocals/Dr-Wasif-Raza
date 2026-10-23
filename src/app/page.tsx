@@ -4,6 +4,7 @@ import Hero from "@/components/home/Hero";
 import Marquee from "@/components/Marquee";
 import AboutStrip from "@/components/home/AboutStrip";
 import Numbers from "@/components/home/Numbers";
+import Theatre from "@/components/home/Theatre";
 import Expertise from "@/components/home/Expertise";
 import SymptomChecker from "@/components/home/SymptomChecker";
 import Statement from "@/components/home/Statement";
@@ -38,6 +39,7 @@ export default function HomePage() {
       <Marquee items={STRIP} />
       <AboutStrip />
       <Numbers />
+      <Theatre />
       <Expertise />
       <Statement />
       <SymptomChecker />
