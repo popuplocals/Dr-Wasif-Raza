@@ -34,10 +34,10 @@ export default function Theatre() {
         <div className="sticky top-0 flex h-screen items-center overflow-hidden">
           <div className="mx-auto grid w-full max-w-[1400px] grid-cols-[0.9fr_1.1fr] items-center gap-16 px-10">
             <div>
-              <p className="flex items-center gap-3 text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] text-amber">
+              <p className="flex items-center gap-3 text-[12.5px] font-semibold uppercase tracking-[0.2em] text-amber">
                 <span className="h-px w-7 bg-amber" /> In the operating theatre
               </p>
-              <h2 className="mt-4 text-[clamp(30px,3.6vw,46px)] text-white">Real footage from Apollo Medics. No patient is identifiable.</h2>
+              <h2 className="mt-4 text-[clamp(25px,2.9vw,37px)] text-white">Real footage from Apollo Medics. No patient is identifiable.</h2>
               <ol className="mt-10 flex flex-col gap-2">
                 {CLIPS.map((c, i) => (
                   <Caption key={c.src} clip={c} i={i} progress={smooth} active={active === i} />
@@ -56,10 +56,10 @@ export default function Theatre() {
 
       {/* Phones and tablets: swipe rail */}
       <div className="px-5 py-16 lg:hidden">
-        <p className="flex items-center gap-3 text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] text-amber">
+        <p className="flex items-center gap-3 text-[12.5px] font-semibold uppercase tracking-[0.2em] text-amber">
           <span className="h-px w-7 bg-amber" /> In the operating theatre
         </p>
-        <h2 className="mt-4 text-[clamp(26px,6vw,34px)] text-white">Real footage from Apollo Medics.</h2>
+        <h2 className="mt-4 text-[clamp(21px,4.8vw,27px)] text-white">Real footage from Apollo Medics.</h2>
         <div className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2" data-lenis-prevent>
           {CLIPS.map((c, i) => (
             <div key={c.src} className="w-[72vw] shrink-0 snap-center sm:w-[320px]">

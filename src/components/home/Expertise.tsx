@@ -51,8 +51,8 @@ export default function Expertise() {
     <section className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-32" id="expertise">
       <div className="flex flex-wrap items-end justify-between gap-4 border-b border-teal-deep/70 pb-6">
         <div>
-          <p className="font-mono text-[12px] font-medium uppercase tracking-[0.12em] text-teal">Surgical practice</p>
-          <h2 className="mt-3 max-w-[20ch] text-[clamp(32px,4.2vw,58px)] leading-[1.04] tracking-[-0.025em]">Colorectal cancer first. Keyhole and robotic wherever it helps.</h2>
+          <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-teal">Surgical practice</p>
+          <h2 className="mt-3 max-w-[20ch] text-[clamp(26px,3.4vw,46px)] leading-[1.04] tracking-[-0.025em]">Colorectal cancer first. Keyhole and robotic wherever it helps.</h2>
         </div>
         <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-ink-2">0{items.length} areas of practice</p>
       </div>
@@ -71,7 +71,7 @@ export default function Expertise() {
               <Link href={`/${s.slug}`} className="group grid grid-cols-[44px_1fr_auto] items-start gap-x-4 border-b border-line py-6 transition-[padding,background-color] duration-500 ease-spring hover:bg-sage/30 md:grid-cols-[64px_1fr_auto] md:py-8 lg:hover:pl-3">
                 <span className={`pt-2 font-mono text-[13px] transition-colors duration-300 ${active === i ? "text-amber-dark" : "text-ink-2"}`}>0{i + 1}</span>
                 <span>
-                  <span className={`block font-heading text-[clamp(24px,2.8vw,38px)] leading-[1.08] tracking-[-0.02em] transition-colors duration-300 ${active === i ? "text-teal-deep" : "text-teal-deep/70"}`}>
+                  <span className={`block font-heading text-[clamp(20px,2.2vw,30px)] leading-[1.08] tracking-[-0.02em] transition-colors duration-300 ${active === i ? "text-teal-deep" : "text-teal-deep/70"}`}>
                     {s.slug === "piles-treatment-lucknow" ? "Piles, fissure & fistula" : s.name}
                   </span>
                   <span className="mt-2 block max-w-[52ch] text-[15.5px] leading-relaxed text-ink-2">{s.card}</span>
@@ -89,7 +89,7 @@ export default function Expertise() {
 
         <div className="relative hidden lg:block">
           <div className="sticky top-28">
-            <div className="relative aspect-[4/5] overflow-hidden bg-sage">
+            <div className="relative aspect-[4/3] overflow-hidden bg-sage">
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.div key={cur.slug} initial={{ opacity: 0, scale: 1.06 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6, ease: EASE }} className="absolute inset-0">
                   <Image src={cur.illustration ?? cur.image} alt={cur.imageAlt} fill sizes="440px" className="object-cover" />

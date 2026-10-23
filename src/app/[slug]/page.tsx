@@ -71,7 +71,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
           <Reveal y={20} className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line shadow-lift sm:grid-cols-2 lg:grid-cols-4">
             {s.glance.map((g) => (
               <div key={g.label} className="bg-surface px-5 py-4">
-                <p className="text-[11.5px] font-mono font-medium uppercase tracking-[0.12em] text-amber-dark">{g.label}</p>
+                <p className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-amber-dark">{g.label}</p>
                 <p className="mt-1 font-heading text-[18px] font-semibold text-teal-deep">{g.value}</p>
               </div>
             ))}
@@ -99,7 +99,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 
           <div className="mt-16">
             <Reveal y={14}>
-              <h2 className="text-[clamp(26px,3vw,34px)]">Questions patients ask</h2>
+              <h2 className="text-[clamp(21px,2.4vw,27px)]">Questions patients ask</h2>
             </Reveal>
             <div className="mt-6">
               <Faq items={s.faqs} />
@@ -113,7 +113,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 
         <aside className="lg:sticky lg:top-28 lg:self-start">
           <Reveal y={20} className="rounded-3xl bg-teal-deep p-6 text-bg shadow-lift">
-            <p className="text-[12px] font-mono font-medium uppercase tracking-[0.12em] text-amber">Book a consultation</p>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-amber">Book a consultation</p>
             <p className="mt-3 text-[15px] text-bg/80">{HOSPITAL}, Lucknow</p>
             <a href={PHONE_TEL} className="mt-2 block font-heading text-[28px] font-semibold text-white transition-colors hover:text-amber">
               {PHONE_DISPLAY}
@@ -134,7 +134,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 
           {related.length > 0 && (
             <Reveal y={20} delay={0.1} className="mt-6 rounded-3xl border border-line bg-surface p-6">
-              <p className="text-[12px] font-mono font-medium uppercase tracking-[0.12em] text-teal">Related care</p>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-teal">Related care</p>
               <ul className="mt-3 flex flex-col">
                 {related.map((r) => (
                   <li key={r.slug} className="border-t border-line first:border-t-0">
@@ -154,8 +154,8 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
         <section className="bg-sage/40">
           <div className="mx-auto max-w-[1400px] px-5 py-16 md:px-10 md:py-24">
             <Reveal y={14}>
-              <p className="text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] text-teal">Read more</p>
-              <h2 className="mt-3 text-[clamp(26px,3vw,36px)]">Know your health</h2>
+              <p className="text-[12.5px] font-semibold uppercase tracking-[0.2em] text-teal">Read more</p>
+              <h2 className="mt-3 text-[clamp(21px,2.4vw,29px)]">Know your health</h2>
             </Reveal>
             <div className="mt-10 grid gap-5 md:grid-cols-3">
               {articles.map((a, i) => (

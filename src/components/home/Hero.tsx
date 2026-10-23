@@ -50,15 +50,15 @@ export default function Hero() {
 
         <div className="grid gap-10 pb-12 pt-10 md:pt-16 lg:min-h-[calc(100vh-190px)] lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:gap-14 lg:pb-16">
           <motion.div style={{ y: textY }} className="relative z-10">
-            <h1 className="text-[clamp(36px,5.4vw,84px)] font-medium leading-[1.02] tracking-[-0.025em] text-teal-deep">
+            <h1 className="text-[clamp(30px,4.3vw,67px)] font-extrabold leading-[1.06] tracking-[-0.03em] text-ink">
               {LINES.map((t, i) => (
-                <span key={t} className="block overflow-hidden pb-[0.1em]">
+              <span key={t} className={`block overflow-hidden pb-[0.1em] ${i === 0 ? "text-teal" : ""}`}>
                   <motion.span initial={{ y: "105%" }} animate={{ y: 0 }} transition={{ duration: 0.95, ease: EASE, delay: 0.1 + i * 0.12 }} className="block">
                     {t}
                     {i === LINES.length - 1 && (
                       <>
                         {" "}
-                        <em className="font-normal italic text-amber-dark">Lucknow</em>
+                        <span className="text-green">Lucknow</span>
                       </>
                     )}
                   </motion.span>
@@ -105,7 +105,7 @@ export default function Hero() {
         <dl className="grid grid-cols-2 border-t border-teal-deep/70 md:grid-cols-4">
           {LEDGER.map((c, i) => (
             <motion.div key={c.l} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: EASE, delay: 1 + i * 0.08 }} className={`px-1 py-6 md:px-6 ${i > 0 ? "md:border-l md:border-line" : ""} ${i % 2 === 1 ? "border-l border-line md:border-l" : ""} ${i > 1 ? "border-t border-line md:border-t-0" : ""}`}>
-              <dt className="font-heading text-[clamp(26px,3vw,40px)] font-medium leading-none text-teal-deep">{c.n}</dt>
+              <dt className="font-heading text-[clamp(21px,2.4vw,32px)] font-medium leading-none text-teal-deep">{c.n}</dt>
               <dd className="mt-2 font-mono text-[11.5px] uppercase tracking-[0.08em] text-ink-2">{c.l}</dd>
             </motion.div>
           ))}

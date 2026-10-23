@@ -74,11 +74,11 @@ export default function Stories() {
                 className="relative cursor-grab active:cursor-grabbing"
                 lang={s.lang}
               >
-                <p className="text-[12px] font-mono font-medium uppercase tracking-[0.12em] text-amber-dark">{s.tag}</p>
+                <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-amber-dark">{s.tag}</p>
                 <p className={`mt-4 font-heading text-[20px] leading-[1.5] text-teal-deep md:text-[24px] ${s.lang === "hi" ? "font-hindi" : ""}`}>&ldquo;{s.quote}&rdquo;</p>
                 <footer className="mt-5 flex flex-wrap items-center gap-3 text-[14px] text-ink-2">
                   — {s.who}
-                  {s.sample && <span className="rounded-full border border-amber/60 bg-amber-pale px-2 py-0.5 text-[11px] font-mono font-medium uppercase tracking-[0.12em] text-amber-dark">Sample — replace with consented review</span>}
+                  {s.sample && <span className="rounded-full border border-amber/60 bg-amber-pale px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-dark">Sample — replace with consented review</span>}
                 </footer>
               </motion.blockquote>
             </AnimatePresence>

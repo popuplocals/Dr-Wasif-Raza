@@ -67,7 +67,7 @@ function Card({ c, i }: { c: (typeof WALL)[number]; i: number }) {
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-teal-deep/70 to-transparent" />
       </div>
       <div className="p-5">
-        <p className="text-[11.5px] font-mono font-medium uppercase tracking-[0.12em] text-amber-dark">{c.country}</p>
+        <p className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-amber-dark">{c.country}</p>
         <h3 className="mt-1 text-[22px]">{c.title}</h3>
         <p className="mt-1 text-[14.5px] text-ink-2">{c.sub}</p>
       </div>

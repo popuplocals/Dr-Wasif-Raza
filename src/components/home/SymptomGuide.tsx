@@ -25,7 +25,7 @@ export default function SymptomGuide() {
         <div>
           <SectionHeading eyebrow="Symptom guide" title="When should you see a surgeon?" />
           <div className="mt-8 overflow-hidden rounded-2xl border border-line bg-surface shadow-card">
-            <div className="grid grid-cols-[1fr_1fr_auto] gap-3 bg-teal-soft px-5 py-3 text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] text-teal-deep">
+            <div className="grid grid-cols-[1fr_1fr_auto] gap-3 bg-teal-soft px-5 py-3 text-[12.5px] font-semibold uppercase tracking-[0.2em] text-teal-deep">
               <span>If you notice…</span>
               <span>Don&apos;t wait if…</span>
               <span className="w-6" />

@@ -19,11 +19,11 @@ export default function StoriesPage() {
         <div className="columns-1 gap-5 md:columns-2 lg:columns-3 [&>*]:mb-5">
           {STORIES.map((s, i) => (
             <Reveal key={s.tag} index={i % 3} y={24} className="break-inside-avoid rounded-3xl border border-line bg-surface p-7 shadow-card transition-transform duration-500 ease-spring hover:-translate-y-1" lang={s.lang}>
-              <p className="text-[12px] font-mono font-medium uppercase tracking-[0.12em] text-amber-dark">{s.tag}</p>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-amber-dark">{s.tag}</p>
               <p className={`mt-4 font-heading text-[19px] leading-[1.55] text-teal-deep ${s.lang === "hi" ? "font-hindi" : ""}`}>&ldquo;{s.quote}&rdquo;</p>
               <footer className="mt-5 flex flex-wrap items-center gap-2 text-[14px] text-ink-2">
                 — {s.who}
-                {s.sample && <span className="rounded-full border border-amber/60 bg-amber-pale px-2 py-0.5 text-[11px] font-mono font-medium uppercase tracking-[0.12em] text-amber-dark">Sample</span>}
+                {s.sample && <span className="rounded-full border border-amber/60 bg-amber-pale px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-dark">Sample</span>}
               </footer>
             </Reveal>
           ))}

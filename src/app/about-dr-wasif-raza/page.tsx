@@ -150,12 +150,12 @@ export default function AboutPage() {
         </div>
         <div className="flex flex-col gap-6">
           <Reveal y={20} className="rounded-3xl bg-teal-deep p-7 text-bg shadow-lift">
-            <p className="text-[12px] font-mono font-medium uppercase tracking-[0.12em] text-amber">Registrations</p>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-amber">Registrations</p>
             <p className="mt-3 font-heading text-[20px] text-white">National Medical Commission (India) — {NMC}</p>
             <p className="mt-1 font-heading text-[20px] text-white">General Medical Council (UK) — {GMC}</p>
           </Reveal>
           <Reveal y={20} delay={0.1} className="rounded-3xl border border-line bg-surface p-7 shadow-card">
-            <p className="text-[12px] font-mono font-medium uppercase tracking-[0.12em] text-teal">Memberships</p>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-teal">Memberships</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {MEMBERSHIPS.map((m) => (
                 <span key={m} className="rounded-full border border-teal/20 bg-teal-soft px-3.5 py-1.5 text-[14px] font-medium text-teal-deep">

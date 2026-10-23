@@ -17,7 +17,7 @@ export default function Numbers() {
       <div className="relative mx-auto grid max-w-[1400px] grid-cols-2 gap-8 px-5 md:grid-cols-4 md:px-10">
         {STATS.map((s, i) => (
           <Reveal key={s.label} index={i} y={20} className="border-l border-amber/40 pl-5">
-            <CountUp value={s.num} className="block font-heading text-[clamp(44px,6vw,76px)] font-semibold leading-none text-white" />
+            <CountUp value={s.num} className="block font-heading text-[clamp(36px,4.8vw,61px)] font-semibold leading-none text-white" />
             <span className="mt-2 block text-[13px] font-medium uppercase tracking-[0.16em] text-bg/70">{s.label}</span>
           </Reveal>
         ))}

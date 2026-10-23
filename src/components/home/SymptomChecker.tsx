@@ -81,7 +81,7 @@ export default function SymptomChecker() {
                     <Image src={s.illustration ?? s.image} alt={s.imageAlt} fill sizes="(min-width: 1024px) 560px, 92vw" className="object-cover" />
                   </div>
                   <div className="p-6">
-                    <p className="text-[11.5px] font-mono font-medium uppercase tracking-[0.12em] text-amber-dark">{s.eyebrow}</p>
+                    <p className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-amber-dark">{s.eyebrow}</p>
                     <h3 className="mt-1 text-[24px]">{s.name}</h3>
                     <p className="mt-2 text-[15.5px] leading-relaxed text-ink-2">{s.card}</p>
                     {active.urgent && (

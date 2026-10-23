@@ -58,10 +58,10 @@ export default function PageHero({ breadcrumbs, eyebrow, heading, subtitle, imag
           {eyebrow && (
             <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, ease: EASE }} className="mb-5 flex items-center gap-3">
               <motion.span initial={{ width: 0 }} animate={{ width: 28 }} transition={{ duration: 0.6, ease: EASE, delay: 0.1 }} className="h-px bg-amber" />
-              <span className="text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] text-amber">{eyebrow}</span>
+              <span className="text-[12.5px] font-semibold uppercase tracking-[0.2em] text-amber">{eyebrow}</span>
             </motion.div>
           )}
-          <h1 className="max-w-[16ch] text-[clamp(34px,5vw,60px)] font-semibold leading-[1.08] text-white">
+          <h1 className="max-w-[16ch] text-[clamp(28px,4.0vw,48px)] font-semibold leading-[1.08] text-white">
             {words.map((w, i) => (
               <span key={`${w}-${i}`} className="inline-block overflow-hidden pb-1 pr-[0.28em] align-top">
                 <motion.span

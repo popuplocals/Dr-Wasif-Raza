@@ -9,13 +9,13 @@ export default function ArticleIndex({ items }: { items: Article[] }) {
       <div className="grid gap-10 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <Reveal y={14}>
-            <p className="font-mono text-[12px] font-medium uppercase tracking-[0.12em] text-teal">Know your health</p>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-teal">Know your health</p>
           </Reveal>
           <Reveal y={22} delay={0.05}>
-            <h2 className="mt-3 text-[clamp(30px,3.6vw,48px)] leading-[1.05] tracking-[-0.025em]">Plain-language reading, reviewed by Dr. Raza.</h2>
+            <h2 className="mt-3 text-[clamp(25px,2.9vw,38px)] leading-[1.05] tracking-[-0.025em]">Plain-language reading, reviewed by Dr. Raza.</h2>
           </Reveal>
           <Reveal y={12} delay={0.12} className="mt-8">
-            <Link href="/articles" className="font-mono text-[13px] font-medium uppercase tracking-[0.1em] text-teal-deep underline decoration-amber decoration-2 underline-offset-[8px]">
+            <Link href="/articles" className="text-[13px] font-semibold uppercase tracking-[0.2em] text-teal-deep underline decoration-amber decoration-2 underline-offset-[8px]">
               All 12 articles →
             </Link>
           </Reveal>

@@ -1,24 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-teal: #0F4C5C;
-  --color-teal-deep: #0A3540;
-  --color-teal-soft: #E7F0EE;
-  --color-amber: #E6A23C;
-  --color-amber-dark: #C9871F;
-  --color-amber-pale: #FBEFD9;
-  --color-bg: #FAFAF7;
+  --color-teal: #065666;
+  --color-teal-deep: #053F4B;
+  --color-teal-soft: #E4F3F0;
+  --color-amber: #E58F00;
+  --color-amber-dark: #B87200;
+  --color-amber-pale: #FDF0D8;
+  --color-bg: #FFFFFF;
   --color-surface: #FFFFFF;
-  --color-ink: #2B2B2B;
-  --color-ink-2: #5B6563;
-  --color-sage: #DDE8E3;
-  --color-sage-deep: #C5D6CE;
-  --color-line: #D9E1DD;
+  --color-ink: #0B1A1F;
+  --color-ink-2: #55656A;
+  --color-sage: #DCEFEC;
+  --color-green: #04625C;
+  --color-blue: #25608A;
+  --color-sage-deep: #BCD9D4;
+  --color-line: #D3E3E0;
 
-  --font-heading: var(--font-newsreader), Georgia, "Times New Roman", serif;
-  --font-body: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
-  --font-hindi: var(--font-devanagari), var(--font-plex), sans-serif;
+  --font-heading: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-script: var(--font-kaushan), "Brush Script MT", cursive;
+  --font-hindi: var(--font-devanagari), var(--font-montserrat), sans-serif;
 
   --ease-spring: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -62,16 +65,16 @@ body {
   background: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-body);
-  font-size: 16.5px;
+  font-size: 16px;
   line-height: 1.65;
-  font-feature-settings: "ss01", "kern";
+  
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 ::selection { background: var(--color-amber-pale); color: var(--color-teal-deep); }
 
 @layer base {
-  h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 500; letter-spacing: -0.018em; line-height: 1.1; font-optical-sizing: auto; color: var(--color-teal-deep); text-wrap: balance; }
+  h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; letter-spacing: -0.025em; line-height: 1.12; color: var(--color-teal); text-wrap: balance; }
   [lang="hi"], .hi { font-family: var(--font-hindi); }
   [lang="hi"] h1, [lang="hi"] h2, [lang="hi"] h3 { font-family: var(--font-hindi); font-weight: 700; }
 }

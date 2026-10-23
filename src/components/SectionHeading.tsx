@@ -17,13 +17,13 @@ export default function SectionHeading({ eyebrow, title, text, align = "left", l
         <Reveal y={10} duration={0.6}>
           <div className={`mb-4 flex items-center gap-3 ${center ? "justify-center" : ""}`}>
             <span className="h-px w-7 bg-amber" />
-            <span className={`text-[12.5px] font-mono font-medium uppercase tracking-[0.12em] ${light ? "text-amber" : "text-teal"}`}>{eyebrow}</span>
+            <span className={`text-[12.5px] font-semibold uppercase tracking-[0.2em] ${light ? "text-amber" : "text-teal"}`}>{eyebrow}</span>
             {center && <span className="h-px w-7 bg-amber" />}
           </div>
         </Reveal>
       )}
       <Reveal y={22} delay={0.05}>
-        <h2 className={`text-[clamp(28px,3.6vw,44px)] ${light ? "text-white" : ""}`}>{title}</h2>
+        <h2 className={`text-[clamp(23px,2.9vw,35px)] ${light ? "text-white" : ""}`}>{title}</h2>
       </Reveal>
       {text && (
         <Reveal y={18} delay={0.12}>

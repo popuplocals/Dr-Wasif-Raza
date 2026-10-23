@@ -87,7 +87,7 @@ export default function CompareSlider() {
           return (
             <li key={s.label}>
               <div className="flex items-baseline justify-between text-[13.5px]">
-                <span className="font-mono font-medium uppercase tracking-[0.12em] text-teal-deep">{s.label}</span>
+                <span className="font-semibold uppercase tracking-[0.2em] text-teal-deep">{s.label}</span>
                 <span className="text-ink-2">{mix < 0.5 ? s.open : s.keyhole}</span>
               </div>
               <div className="mt-1.5 h-2.5 overflow-hidden rounded-full bg-sage/70">
@@ -133,7 +133,7 @@ function Torso({ label, variant }: { label: string; variant: "open" | "keyhole" 
           </g>
         )}
       </svg>
-      <span className={`absolute left-4 top-4 rounded-full px-3 py-1 text-[12px] font-mono font-medium uppercase tracking-[0.12em] ${open ? "bg-amber-dark text-white" : "bg-teal text-white"}`}>{label}</span>
+      <span className={`absolute left-4 top-4 rounded-full px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.2em] ${open ? "bg-amber-dark text-white" : "bg-teal text-white"}`}>{label}</span>
     </div>
   );
 }

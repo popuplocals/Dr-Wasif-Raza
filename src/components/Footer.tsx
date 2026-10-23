@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Logo from "@/components/Logo";
 import { ADDRESS_LINES, CREDENTIALS, GMC, HOSPITAL, NAV_GROUPS, NMC, OPD, PHONE_DISPLAY, PHONE_TEL, ROLE, WHATSAPP } from "@/lib/site";
 
 export default function Footer() {
@@ -9,11 +9,8 @@ export default function Footer() {
       <div className="relative mx-auto max-w-[1400px] px-5 pb-10 pt-16 md:px-10 md:pt-20">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
-            <Link href="/" className="flex items-center gap-3">
-              <span className="relative block h-11 w-11 overflow-hidden rounded-full border-2 border-amber/80 bg-teal" aria-hidden="true">
-                <Image src="/photos/avatar.webp" alt="" fill sizes="44px" className="object-cover" />
-              </span>
-              <span className="font-heading text-[22px] font-semibold text-white">Dr. Wasif Raza</span>
+            <Link href="/" aria-label="Dr. Wasif Raza, home" className="inline-block">
+              <Logo variant="full" light size="lg" />
             </Link>
             <p className="mt-4 text-[14.5px] leading-relaxed">
               {ROLE}

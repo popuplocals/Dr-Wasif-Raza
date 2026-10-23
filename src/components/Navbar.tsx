@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import Logo from "@/components/Logo";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -121,15 +121,10 @@ export default function Navbar() {
             }`}
           >
             <nav className={`mx-auto flex h-full w-full max-w-[1400px] items-center justify-between gap-4 transition-[padding] duration-[450ms] ease-spring ${scrolled ? "px-4 md:px-6" : "px-5 md:px-10"}`} aria-label="Main">
-              <Link href="/" className="group flex shrink-0 items-center gap-3">
-                <span className={`relative block shrink-0 overflow-hidden rounded-full border-2 border-amber/80 bg-teal transition-[height,width,transform] duration-[450ms] ease-spring group-hover:scale-105 ${scrolled ? "h-9 w-9" : "h-11 w-11"}`} aria-hidden="true">
-                  <Image src="/photos/avatar.webp" alt="" fill sizes="44px" className="object-cover" priority />
-                </span>
-                <span className="flex flex-col leading-[1.1]">
-                  <span className="font-heading text-[18px] font-semibold text-teal-deep">Dr. Wasif Raza</span>
-                  <span className={`overflow-hidden text-[11.5px] tracking-[0.02em] text-ink-2 transition-[max-height,opacity] duration-[450ms] ease-spring ${scrolled ? "max-h-0 opacity-0" : "max-h-4 opacity-100"}`}>
-                    Colorectal &amp; Laparoscopic Surgeon, Lucknow
-                  </span>
+              <Link href="/" className="group flex shrink-0 items-center" aria-label="Dr. Wasif Raza, home">
+                <span className={`origin-left transition-transform duration-[450ms] ease-spring group-hover:scale-[1.03] ${scrolled ? "scale-[0.86]" : "scale-100"}`}>
+                  <span className="hidden sm:block"><Logo size="md" /></span>
+                  <span className="sm:hidden"><Logo size="sm" hideCredentials /></span>
                 </span>
               </Link>
 

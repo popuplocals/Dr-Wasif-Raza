@@ -39,10 +39,10 @@ export default function AboutStrip() {
 
         <div className="lg:col-span-7 lg:pt-4">
           <Reveal y={14}>
-            <p className="font-mono text-[12px] font-medium uppercase tracking-[0.12em] text-teal">The surgeon</p>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-teal">The surgeon</p>
           </Reveal>
           <Reveal y={22} delay={0.05}>
-            <h2 className="mt-4 max-w-[18ch] text-[clamp(32px,4.2vw,58px)] leading-[1.04] tracking-[-0.025em]">The surgeon you choose shapes everything that follows.</h2>
+            <h2 className="mt-4 max-w-[18ch] text-[clamp(26px,3.4vw,46px)] leading-[1.04] tracking-[-0.025em]">The surgeon you choose shapes everything that follows.</h2>
           </Reveal>
           <div className="mt-10 grid gap-6 md:grid-cols-2 md:gap-10">
             <Reveal y={16} delay={0.1} className="text-[17px] leading-[1.75] text-ink">
@@ -67,7 +67,7 @@ export default function AboutStrip() {
           </dl>
 
           <Reveal y={12} delay={0.1} className="mt-10">
-            <Link href="/about-dr-wasif-raza" className="font-mono text-[13px] font-medium uppercase tracking-[0.1em] text-teal-deep underline decoration-amber decoration-2 underline-offset-[8px] transition-colors hover:text-teal">
+            <Link href="/about-dr-wasif-raza" className="text-[13px] font-semibold uppercase tracking-[0.2em] text-teal-deep underline decoration-amber decoration-2 underline-offset-[8px] transition-colors hover:text-teal">
               Full profile →
             </Link>
           </Reveal>

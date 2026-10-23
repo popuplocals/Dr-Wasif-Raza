@@ -1,5 +1,7 @@
 "use client";
 
+import Logo from "@/components/Logo";
+
 import { useEffect, useState } from "react";
 
 const HOLD_MS = 1500;
@@ -36,36 +38,13 @@ export default function Preloader() {
         leaving ? "pointer-events-none opacity-0 [clip-path:inset(0_0_100%_0)]" : "opacity-100 [clip-path:inset(0_0_0_0)]"
       }`}
     >
-      <div className="flex flex-col items-center gap-5">
-        <svg width="84" height="84" viewBox="0 0 84 84" fill="none" aria-hidden="true">
-          <circle
-            cx="42"
-            cy="42"
-            r="39"
-            stroke="#E6A23C"
-            strokeWidth="1.5"
-            strokeDasharray="245"
-            strokeDashoffset="245"
-            style={{ animation: "wr-draw 1.1s cubic-bezier(0.16,1,0.3,1) forwards" }}
-          />
-          <text
-            x="42"
-            y="52"
-            textAnchor="middle"
-            fill="#FAFAF7"
-            fontFamily="var(--font-newsreader), Georgia, serif"
-            fontSize="30"
-            fontWeight="600"
-            style={{ opacity: 0, animation: "wr-fade 0.6s 0.45s forwards" }}
-          >
-            WR
-          </text>
-        </svg>
-        <p className="font-heading text-[15px] tracking-[0.18em] text-bg/80" style={{ opacity: 0, animation: "wr-fade 0.6s 0.7s forwards" }}>
-          DR. WASIF RAZA
-        </p>
+      <div className="flex flex-col items-center gap-6 px-6 text-center">
+        <span style={{ opacity: 0, animation: "wr-fade 0.7s 0.15s forwards" }}>
+          <Logo variant="full" light size="xl" />
+        </span>
+        <span className="block h-px w-40 origin-center bg-amber" style={{ transform: "scaleX(0)", animation: "wr-line 1s 0.5s cubic-bezier(0.16,1,0.3,1) forwards" }} />
       </div>
-      <style>{`@keyframes wr-draw{to{stroke-dashoffset:0}}@keyframes wr-fade{to{opacity:1}}`}</style>
+      <style>{`@keyframes wr-line{to{transform:scaleX(1)}}@keyframes wr-fade{to{opacity:1}}`}</style>
     </div>
   );
 }
