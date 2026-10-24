@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
-import { ADDRESS_LINES, CREDENTIALS, GMC, HOSPITAL, NAV_GROUPS, NMC, OPD, PHONE_DISPLAY, PHONE_TEL, ROLE, WHATSAPP } from "@/lib/site";
+import { ADDRESS_LINES, CREDENTIALS, GMC, HOSPITAL, NAV_GROUPS, NMC, OPD, ROLE, WHATSAPP } from "@/lib/site";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -21,10 +21,7 @@ export default function Footer() {
               <br />
               {ADDRESS_LINES[1]}
             </p>
-            <a href={PHONE_TEL} className="mt-4 inline-block font-heading text-[24px] font-semibold text-amber transition-colors hover:text-amber-pale">
-              {PHONE_DISPLAY}
-            </a>
-            <p className="mt-1 text-[13.5px]">
+            <p className="mt-4 text-[13.5px]">
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="underline decoration-bg/30 underline-offset-4 hover:text-white">
                 WhatsApp
               </a>{" "}

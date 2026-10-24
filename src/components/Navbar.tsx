@@ -95,11 +95,8 @@ export default function Navbar() {
         >
           <div className="mx-auto flex h-9 max-w-[1400px] items-center justify-between gap-4 px-5 md:px-10">
             <div className="flex items-center gap-3">
-              <a href={PHONE_TEL} className="flex items-center gap-1.5 font-semibold text-white transition-colors hover:text-amber">
-                <PhoneIcon /> {PHONE_DISPLAY}
-              </a>
-              <span className="hidden text-bg/40 sm:inline">·</span>
-              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="hidden items-center gap-1.5 transition-colors hover:text-amber sm:flex">
+
+              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 transition-colors hover:text-amber">
                 <WaIcon /> WhatsApp
               </a>
             </div>
@@ -197,9 +194,6 @@ export default function Navbar() {
               </div>
 
               <div className="flex items-center gap-2 md:gap-3">
-                <a href={PHONE_TEL} className="hidden items-center gap-1.5 whitespace-nowrap text-[14px] font-semibold text-teal transition-transform duration-300 ease-spring hover:-translate-y-0.5 lg:flex xl:hidden 2xl:flex">
-                  <PhoneIcon /> {PHONE_DISPLAY}
-                </a>
                 <Link href="/contact" className={`btn btn-amber hidden md:inline-flex ${scrolled ? "px-5 py-2.5 text-[14px]" : ""}`}>
                   Book Appointment
                 </Link>
