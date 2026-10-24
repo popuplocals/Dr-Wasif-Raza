@@ -115,6 +115,27 @@ export default function AboutPage() {
         </Reveal>
       </section>
 
+      <section className="mx-auto max-w-[1400px] px-5 pb-16 md:px-10 md:pb-24">
+        <SectionHeading eyebrow="Clinical appointments" title="Where Dr. Raza has practised" />
+        <div className="mt-10 grid gap-8 md:grid-cols-2">
+          <Reveal y={20}>
+            <h3 className="border-b border-teal-deep/70 pb-3 text-[20px]">United Kingdom (8 years, NHS)</h3>
+            <ul className="mt-4 grid gap-3 text-[16px] leading-snug text-ink">
+              <li>Colorectal Specialist — Betsi Cadwaladr University Health Board, Wales</li>
+              <li>Specialist Registrar in Colorectal Surgery — Royal Liverpool &amp; Broadgreen University Hospital NHS Trust</li>
+            </ul>
+          </Reveal>
+          <Reveal y={20} delay={0.08}>
+            <h3 className="border-b border-teal-deep/70 pb-3 text-[20px]">India</h3>
+            <ul className="mt-4 grid gap-3 text-[16px] leading-snug text-ink">
+              <li>Associate Director, Colorectal &amp; General Surgery — Apollo Medics Superspeciality Hospitals, Lucknow (current)</li>
+              <li>Senior Consultant Colorectal Surgeon — HealthCity Vistaar, Lucknow</li>
+              <li>Assistant Professor of Surgery — Era&apos;s Lucknow Medical College &amp; Hospital</li>
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="bg-sage/40">
         <div className="mx-auto max-w-[1400px] px-5 py-16 md:px-10 md:py-24">
           <SectionHeading eyebrow="Clinical expertise" title="What Dr. Raza treats" />

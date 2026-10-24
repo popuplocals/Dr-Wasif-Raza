@@ -9,7 +9,6 @@ import Footer from "@/components/Footer";
 import StickyBar from "@/components/StickyBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import TouchFeedback from "@/components/TouchFeedback";
-import Preloader from "@/components/Preloader";
 import AskPanel from "@/components/AskPanel";
 import { PHYSICIAN_LD, SITE_URL } from "@/lib/site";
 
@@ -60,17 +59,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${montserrat.variable} ${kaushan.variable} ${devanagari.variable} antialiased`} suppressHydrationWarning>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "(function(){try{if(!sessionStorage.getItem('wr-preloaded')){document.documentElement.classList.add('wr-splash');sessionStorage.setItem('wr-preloaded','1');}}catch(e){}})();",
-          }}
-        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PHYSICIAN_LD) }} />
       </head>
       <body className="min-h-screen">
         <MotionProvider>
-          <Preloader />
           <SmoothScroll />
           <ScrollProgress />
           <div className="wr-site flex min-h-screen flex-col">

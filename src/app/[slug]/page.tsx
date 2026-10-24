@@ -7,12 +7,11 @@ import Faq from "@/components/Faq";
 import CtaBand from "@/components/CtaBand";
 import Reveal from "@/components/Reveal";
 import ArticleCard from "@/components/ArticleCard";
-import { GROUP_LABEL, SERVICES, SERVICE_BY_SLUG } from "@/content/services";
+import { GROUP_LABEL, SERVICES, SERVICE_BY_SLUG, illustrationAlt } from "@/content/services";
 import { ARTICLE_BY_SLUG } from "@/lib/articles";
 import { breadcrumbLd, faqLd, HOSPITAL, PHONE_DISPLAY, PHONE_TEL, SITE_URL, WHATSAPP } from "@/lib/site";
 import { PhoneIcon, WaIcon } from "@/components/Navbar";
 import Image from "next/image";
-import TreatmentJourney from "@/components/TreatmentJourney";
 import RecoveryCalculator from "@/components/RecoveryCalculator";
 import AnatomyViewer from "@/components/AnatomyViewer";
 import { hasAnatomy } from "@/content/anatomy";
@@ -56,7 +55,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 
   return (
     <>
-      <PageHero breadcrumbs={[{ label: "Home", href: "/" }, { label: GROUP_LABEL[s.group] }, { label: s.name }]} eyebrow={s.eyebrow} heading={s.h1} subtitle={s.intro} image={{ src: s.image, alt: s.imageAlt }} figure={s.illustration ? { src: s.illustration, alt: s.imageAlt, caption: "Illustration — not a patient image" } : undefined}>
+      <PageHero breadcrumbs={[{ label: "Home", href: "/" }, { label: GROUP_LABEL[s.group] }, { label: s.name }]} eyebrow={s.eyebrow} heading={s.h1} subtitle={s.intro} image={{ src: s.image, alt: s.imageAlt }} figure={s.illustration ? { src: s.illustration, alt: illustrationAlt(s), caption: "Illustration — not a patient image" } : undefined}>
         <div className="flex flex-wrap gap-2">
           {s.highlights.map((h) => (
             <span key={h} className="rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[13.5px] text-bg backdrop-blur">
@@ -81,16 +80,15 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 
       <section className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)] gap-12 px-5 py-16 md:px-10 md:py-24 lg:grid-cols-[minmax(0,1fr)_340px]">
         <article>
-          {s.illustration && hasAnatomy(s.slug) && <AnatomyViewer slug={s.slug} src={s.illustration} alt={s.imageAlt} />}
+          {s.illustration && hasAnatomy(s.slug) && <AnatomyViewer slug={s.slug} src={s.illustration} alt={illustrationAlt(s)} />}
           {s.illustration && !hasAnatomy(s.slug) && (
             <Reveal y={16} className="relative mb-10 aspect-[16/9] overflow-hidden rounded-3xl shadow-card lg:hidden">
-              <Image src={s.illustration} alt={s.imageAlt} fill sizes="100vw" className="object-cover" />
+              <Image src={s.illustration} alt={illustrationAlt(s)} fill sizes="100vw" className="object-cover" />
             </Reveal>
           )}
           <Blocks blocks={s.blocks} />
           {s.slug === "second-opinion-colon-rectal-cancer-lucknow" && <ReportDrop />}
           {RECOVERY[s.slug] && <RecoveryCalculator slug={s.slug} />}
-          <TreatmentJourney group={s.group} />
           {s.hindi && (
             <Reveal y={14} className="mt-10 rounded-2xl border border-sage-deep bg-sage/50 p-5 text-[16.5px] leading-relaxed text-teal-deep">
               <span className="hi">{s.hindi}</span>
@@ -107,7 +105,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
           </div>
 
           <Reveal y={12} className="mt-10 rounded-2xl border border-line bg-surface p-5 text-[14px] leading-relaxed text-ink-2">
-            This page is for information only and is not a substitute for a consultation. Individual results vary. Reviewed by Dr. Wasif Raza, {HOSPITAL}, Lucknow.
+            This content is for information only and is not a substitute for consultation. Individual results vary. Reviewed by <Link href="/about-dr-wasif-raza" className="font-semibold text-teal underline decoration-teal/30 underline-offset-4">Dr. Wasif Raza</Link>, {HOSPITAL}, Lucknow. <Link href="/" className="underline decoration-teal/30 underline-offset-4">Home</Link> · <Link href="/contact" className="underline decoration-teal/30 underline-offset-4">Contact</Link>
           </Reveal>
         </article>
 

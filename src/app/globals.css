@@ -92,8 +92,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Preloader gate: page content stays hidden under the splash before hydration */
-html.wr-splash .wr-site { visibility: hidden; }
 
 /* Signature dashed "suture" rule */
 .suture { height: 0; border-top: 2px dashed var(--color-sage-deep); }

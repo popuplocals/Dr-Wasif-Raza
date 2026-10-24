@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { EASE } from "@/lib/motion";
 
-const ITEMS = ["All previous reports, scans (CT / MRI / ultrasound), colonoscopy and biopsy reports", "List of current medications", "Referral letter, if any", "A family member — a second pair of ears helps", "Your questions written down"];
+const ITEMS = ["All previous reports, scans (CT / MRI / ultrasound), colonoscopy and biopsy reports", "List of current medications", "Referral letter, if any", "A family member — a second pair of ears helps"];
 const KEY = "wr-checklist-v1";
 
 /** Tickable preparation list. Progress is remembered on this device only. */

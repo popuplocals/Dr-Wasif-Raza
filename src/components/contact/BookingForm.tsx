@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { EASE } from "@/lib/motion";
 import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_MSG } from "@/lib/site";
 
-const CONCERNS = ["Colon / Rectal Cancer", "Second Opinion", "Hernia", "Gallbladder", "Appendix", "Piles / Fissure / Fistula", "Rectal Bleeding", "Colonoscopy", "Other"];
+const CONCERNS = ["Colon / Rectal Cancer", "Hernia", "Gallbladder", "Appendix", "Piles / Fissure / Fistula", "Rectal Bleeding", "Other"];
 const WHEN = [
   { id: "emergency", label: "It's an emergency", sub: "Severe pain, vomiting, a hard lump that won't go back" },
   { id: "week", label: "This week", sub: "Symptoms are bothering me now" },

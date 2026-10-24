@@ -9,10 +9,8 @@ const WALL = [
   { title: "FRCS", sub: "Royal College of Physicians & Surgeons of Glasgow", country: "United Kingdom", img: "/photos/convocation-award.webp" },
   { title: "FACS", sub: "American College of Surgeons", country: "USA · 2023", img: "/photos/convocation-stage.webp" },
   { title: "MCh — Colon & Rectal Surgery", sub: "University of East Anglia, Norwich", country: "United Kingdom", img: "/photos/convocation-hall.webp" },
-  { title: "Colorectal Surgery Residency Programme", sub: "Royal College of Surgeons of England", country: "United Kingdom", img: "/photos/nhs-clatterbridge.webp" },
-  { title: "FMAS", sub: "Association of Minimal Access Surgeons of India", country: "India", img: "/photos/apollo-colorectal-symposium.webp" },
-  { title: "MS — General Surgery", sub: "Dr. RML Avadh University, UP", country: "India", img: "/photos/consultation-suite.webp" },
-];
+  { title: "Royal Liverpool Fellowship", sub: "Royal Liverpool University Hospital", country: "United Kingdom", img: "/photos/nhs-clatterbridge.webp" },
+]
 
 /**
  * Credentials wall: a horizontal rail that is driven by the vertical scroll on desktop (the section is tall
@@ -27,7 +25,7 @@ export default function Credentials() {
   return (
     <section className="bg-bg">
       <div className="mx-auto max-w-[1400px] px-5 pt-20 md:px-10 md:pt-28">
-        <SectionHeading eyebrow="Credentials wall" title="Qualifications, exactly as the certificates read." text="No institutional logos — just the credentials, each one earned over years of training in India, the UK and the USA." />
+        <SectionHeading title="Credentials wall" />
       </div>
 
       {/* Desktop: scroll-driven horizontal rail */}

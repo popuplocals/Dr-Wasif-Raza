@@ -36,7 +36,7 @@ export default function CompareSlider() {
     <div className="not-prose rounded-3xl border border-line bg-surface p-5 shadow-card md:p-7">
       <div className="flex flex-wrap items-baseline justify-between gap-3">
         <h3 className="!mt-0 text-[22px]">Open vs keyhole — drag to compare</h3>
-        <span className="text-[13px] text-ink-2">Illustrative only; your surgeon decides the approach.</span>
+        <span className="text-[13px] text-ink-2">Illustrative only; your surgeon decides the approach. Individual results vary.</span>
       </div>
 
       <div

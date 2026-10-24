@@ -111,7 +111,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
               <p className="font-heading text-[18px] font-semibold text-teal-deep">Dr. Wasif Raza</p>
               <p className="mt-1">MBBS, MS, MCh (Colon &amp; Rectal Surgery, UK), FRCS (UK), FACS (USA). Colon &amp; Rectal Cancer, Laparoscopic &amp; Robotic Surgery, and General Surgery Specialist, {HOSPITAL}, Lucknow. Reg. NMC {NMC} · GMC {GMC}.</p>
               <p className="mt-2 text-ink-2">
-                Appointments: <a href={PHONE_TEL} className="font-semibold text-teal">{PHONE_DISPLAY}</a>. <i>This article is for information only and is not a substitute for a consultation. Individual results vary.</i>
+                Appointments: <a href={PHONE_TEL} className="font-semibold text-teal">{PHONE_DISPLAY}</a>. <i>This content is for information only and is not a substitute for consultation. Individual results vary.</i>
               </p>
             </div>
           </Reveal>

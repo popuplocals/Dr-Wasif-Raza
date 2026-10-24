@@ -17,7 +17,7 @@ const BRING = ["All previous reports, scans (CT/MRI/ultrasound), colonoscopy and
 export default function ContactPage() {
   return (
     <>
-      <PageHero breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]} eyebrow="Contact" heading="Book an appointment." subtitle={`Dr. Wasif Raza · ${ROLE} · Reg. No.: NMC (India) ${NMC} · GMC (UK) ${GMC}`} compact />
+      <PageHero breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]} eyebrow="Contact" heading="Book an Appointment" subtitle={`Dr. Wasif Raza · ${ROLE} · Reg. No.: NMC (India) ${NMC} · GMC (UK) ${GMC}`} compact />
       <BookSection id="form" />
       <section className="bg-sage/40">
         <div className="mx-auto grid max-w-[1400px] gap-10 px-5 py-16 md:grid-cols-2 md:px-10 md:py-24">

@@ -15,7 +15,7 @@ export default function GalleryStrip() {
     <section className="bg-sage/40">
       <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-28">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeading eyebrow="Inside the practice" title="Surgery, training, conferences — a look inside." />
+          <SectionHeading title="Inside the Practice" />
           <Link href="/gallery" className="btn btn-ghost">
             Full gallery <span aria-hidden="true">→</span>
           </Link>

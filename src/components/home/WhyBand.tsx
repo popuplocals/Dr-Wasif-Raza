@@ -25,7 +25,7 @@ export default function WhyBand() {
     <section ref={ref} className="relative isolate overflow-hidden bg-teal text-bg">
       <div className="relative mx-auto grid max-w-[1400px] gap-14 px-5 py-20 md:px-10 md:py-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
         <div>
-          <SectionHeading eyebrow="Why patients choose Dr. Wasif Raza" title="Trained where colorectal surgery was defined. Practising it in Lucknow." light />
+          <SectionHeading title="Why patients choose Dr. Wasif Raza" light />
           <ol className="mt-10 flex flex-col">
             {REASONS.map((r, i) => (
               <Reveal key={r.title} y={20} amount={0.4} className="group relative border-t border-white/10 py-6 first:border-t-0">

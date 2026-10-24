@@ -24,7 +24,7 @@ export default function ArticleCard({ a, index = 0, number }: { a: Article; inde
     <Reveal index={index % 3} y={28} className="h-full">
       <Link href={`/articles/${a.slug}`} lang={a.lang} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-card transition-[transform,box-shadow,border-color] duration-500 ease-spring hover:-translate-y-2 hover:border-teal/30 hover:shadow-lift">
         <div className="relative aspect-[16/8] overflow-hidden bg-teal-soft">
-          <Image src={ART[a.category] ?? "/illustrations/colon-v2.webp"} alt="" fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-[1100ms] ease-spring group-hover:scale-[1.06]" />
+          <Image src={ART[a.category] ?? "/illustrations/colon-v2.webp"} alt={`Illustration for ${a.category.toLowerCase()} — Dr Wasif Raza colorectal surgeon Apollo Medics Lucknow`} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-[1100ms] ease-spring group-hover:scale-[1.06]" />
         </div>
         <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center justify-between">

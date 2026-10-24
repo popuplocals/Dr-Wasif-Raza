@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { SERVICES } from "@/content/services";
+import { SERVICES, illustrationAlt } from "@/content/services";
 import { EASE } from "@/lib/motion";
 
 const ORDER = [
@@ -49,12 +49,8 @@ export default function Expertise() {
   const cur = items[active];
   return (
     <section className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-32" id="expertise">
-      <div className="flex flex-wrap items-end justify-between gap-4 border-b border-teal-deep/70 pb-6">
-        <div>
-          <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-teal">Surgical practice</p>
-          <h2 className="mt-3 max-w-[20ch] text-[clamp(26px,3.4vw,46px)] leading-[1.04] tracking-[-0.025em]">Colorectal cancer first. Keyhole and robotic wherever it helps.</h2>
-        </div>
-        <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-ink-2">0{items.length} areas of practice</p>
+      <div className="border-b border-teal-deep/70 pb-6">
+        <h2 className="text-[clamp(28px,3.4vw,46px)] leading-[1.06] tracking-[-0.025em]">Surgical Expertise</h2>
       </div>
 
       <div className="grid gap-12 lg:grid-cols-[1fr_440px] lg:gap-16">
@@ -72,11 +68,11 @@ export default function Expertise() {
                 <span className={`pt-2 font-mono text-[13px] transition-colors duration-300 ${active === i ? "text-amber-dark" : "text-ink-2"}`}>0{i + 1}</span>
                 <span>
                   <span className={`block font-heading text-[clamp(20px,2.2vw,30px)] leading-[1.08] tracking-[-0.02em] transition-colors duration-300 ${active === i ? "text-teal-deep" : "text-teal-deep/70"}`}>
-                    {s.slug === "piles-treatment-lucknow" ? "Piles, fissure & fistula" : s.name}
+                    {s.slug === "piles-treatment-lucknow" ? "Piles, Fissure & Fistula Surgery" : s.name}
                   </span>
                   <span className="mt-2 block max-w-[52ch] text-[15.5px] leading-relaxed text-ink-2">{s.card}</span>
                   <span className="relative mt-4 block aspect-[16/9] w-full max-w-[420px] overflow-hidden bg-sage lg:hidden">
-                    <Image src={s.illustration ?? s.image} alt={s.imageAlt} fill sizes="(min-width: 640px) 420px, 92vw" className="object-cover" />
+                    <Image src={s.illustration ?? s.image} alt={illustrationAlt(s)} fill sizes="(min-width: 640px) 420px, 92vw" className="object-cover" />
                   </span>
                 </span>
                 <span aria-hidden="true" className="pt-1 font-heading text-[26px] text-teal-deep transition-transform duration-500 ease-spring group-hover:translate-x-1.5">
@@ -92,7 +88,7 @@ export default function Expertise() {
             <div className="relative aspect-[4/3] overflow-hidden bg-sage">
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.div key={cur.slug} initial={{ opacity: 0, scale: 1.06 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6, ease: EASE }} className="absolute inset-0">
-                  <Image src={cur.illustration ?? cur.image} alt={cur.imageAlt} fill sizes="440px" className="object-cover" />
+                  <Image src={cur.illustration ?? cur.image} alt={illustrationAlt(cur)} fill sizes="440px" className="object-cover" />
                 </motion.div>
               </AnimatePresence>
             </div>

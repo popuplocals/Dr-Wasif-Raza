@@ -7,7 +7,7 @@ export const WHATSAPP = "https://wa.me/919278072150";
 export const WHATSAPP_MSG = (text: string) => `${WHATSAPP}?text=${encodeURIComponent(text)}`;
 export const APOLLO247 = "https://www.apollo247.com/";
 export const HOSPITAL = "Apollo Medics Superspeciality Hospitals";
-export const ADDRESS_LINES = ["Sector B, Bargawan, LDA Colony, Lucknow–Kanpur Road", "Lucknow, Uttar Pradesh 226012"];
+export const ADDRESS_LINES = ["Sector B, Bargawan, LDA Colony,", "Lucknow, Uttar Pradesh 226012"];
 export const ADDRESS = ADDRESS_LINES.join(", ");
 export const OPD = "Monday – Saturday, by appointment";
 export const NMC = "08-33828";
@@ -78,7 +78,7 @@ export const PHYSICIAN_LD = {
   worksFor: { "@type": "Hospital", name: HOSPITAL },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Sector B, Bargawan, LDA Colony, Lucknow–Kanpur Road",
+    streetAddress: "Sector B, Bargawan, LDA Colony",
     addressLocality: "Lucknow",
     addressRegion: "Uttar Pradesh",
     postalCode: "226012",

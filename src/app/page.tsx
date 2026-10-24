@@ -5,12 +5,12 @@ import AboutStrip from "@/components/home/AboutStrip";
 import Theatre from "@/components/home/Theatre";
 import Expertise from "@/components/home/Expertise";
 import SymptomChecker from "@/components/home/SymptomChecker";
-import Statement from "@/components/home/Statement";
 import WhyBand from "@/components/home/WhyBand";
 import Credentials from "@/components/home/Credentials";
-import Stories from "@/components/home/Stories";
+import Reviews from "@/components/home/Reviews";
 import GalleryStrip from "@/components/home/GalleryStrip";
-import ArticleIndex from "@/components/home/ArticleIndex";
+import Numbers from "@/components/home/Numbers";
+import ArticleCard from "@/components/ArticleCard";
 import Faq from "@/components/Faq";
 import SectionHeading from "@/components/SectionHeading";
 import BookSection from "@/components/contact/BookSection";
@@ -33,21 +33,33 @@ export default function HomePage() {
     <>
       <Hero />
       <AboutStrip />
-      <Theatre />
+      <Numbers />
       <Expertise />
-      <Statement />
       <SymptomChecker />
       <WhyBand />
       <Credentials />
-      <Stories />
+      <Reviews />
+      <Theatre />
       <GalleryStrip />
 
-      <ArticleIndex items={KNOW.map((s) => ARTICLE_BY_SLUG[s])} />
+      <section className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-28">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionHeading title="Know Your Health" />
+          <Link href="/articles" className="btn btn-ghost">
+            All articles <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {KNOW.map((s, i) => (
+            <ArticleCard key={s} a={ARTICLE_BY_SLUG[s]} index={i} />
+          ))}
+        </div>
+      </section>
 
       <section className="bg-sage/40">
         <div className="mx-auto grid max-w-[1400px] gap-10 px-5 py-20 md:px-10 md:py-28 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <SectionHeading eyebrow="FAQ" title="Questions patients ask before they call." />
+            <SectionHeading title="FAQ" />
             <Reveal y={12} delay={0.2} className="mt-6">
               <Link href="/faqs" className="btn btn-ghost">
                 All FAQs

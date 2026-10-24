@@ -590,7 +590,7 @@ export const SERVICES: Service[] = [
           "Arrive with an empty stomach; a small cannula is placed in the hand",
           "Sedation is given — most patients are drowsy and remember little",
           "The colonoscope is passed gently through the whole colon; air opens the bowel for viewing",
-          "Polyps are removed on the spot with a snare — painless, as the colon lining has no pain nerves",
+          "Polyps are removed on the spot with a snare — the colon lining has no pain nerves, so removal is not felt",
           "Biopsies are taken if anything looks suspicious; bleeding piles can be banded in the same session",
           "30–60 minutes in recovery, then home with a companion (no driving for 24 hours)",
         ],
@@ -818,3 +818,6 @@ export const SERVICES: Service[] = [
 
 export const SERVICE_BY_SLUG = Object.fromEntries(SERVICES.map((s) => [s.slug, s])) as Record<string, Service>;
 export const servicesInGroup = (g: ServiceGroup) => SERVICES.filter((s) => s.group === g);
+
+/** Descriptive alt text for the topic illustrations (name + location, per the PDF's alt-text pattern). */
+export const illustrationAlt = (s: Service) => `Illustration of ${s.name.toLowerCase()} — Dr Wasif Raza colorectal surgeon Apollo Medics Lucknow`;
