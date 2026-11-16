@@ -78,4 +78,4 @@ Doctor returned a v2-based docx with his changes in red; ONLY the red text was a
 - Rectal recovery FAQ → "2–4 weeks to normal activity… within a few weeks" (glance + recovery planner matched: 14–28 days).
 - Laparoscopic page: FMAS "in 2014"; ports "5–10 mm"; lap/open table stay "1–3 days", return "Within days" (glance + CompareSlider matched).
 - Fistula complex type "…and sometimes sphincter repair."
-NOT applied (black text in the v2 doc that contradicts v4 FINAL): "14 years of experience" (v4 + doctor's 22 Oct confirmation say 15), reworded Why-band NHS line mentioning University of Liverpool, "he brings minimally invasive and robotic surgery to patients across Uttar Pradesh". Ask if any of these were intended.
+UPDATE 16 Nov: the doctor confirmed 14 years — site now says 14 / 14+ everywhere. Still NOT applied (black text in the v2 doc): reworded Why-band NHS line mentioning University of Liverpool, "he brings minimally invasive and robotic surgery to patients across Uttar Pradesh". Ask if any of these were intended.
