@@ -6,7 +6,7 @@ const STATS = [
   { num: "15+", label: "Years in surgery" },
   { num: "8", label: "Years in NHS, UK" },
   { num: "2", label: "Global fellowships" },
-  { num: "7", label: "Published research papers" },
+  { num: "10+", label: "Published research papers" },
 ];
 
 export default function Numbers() {

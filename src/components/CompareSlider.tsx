@@ -8,8 +8,8 @@ type Stat = { label: string; open: string; keyhole: string; openPct: number; key
 
 const STATS: Stat[] = [
   { label: "Incision", open: "One 10–20 cm cut", keyhole: "3–5 cuts of 5–12 mm", openPct: 100, keyholePct: 18 },
-  { label: "Hospital stay", open: "5–10 days", keyhole: "1–5 days", openPct: 100, keyholePct: 45 },
-  { label: "Return to work", open: "4–8 weeks", keyhole: "1–4 weeks", openPct: 100, keyholePct: 40 },
+  { label: "Hospital stay", open: "5–10 days", keyhole: "1–3 days", openPct: 100, keyholePct: 30 },
+  { label: "Return to work", open: "4–8 weeks", keyhole: "Within days", openPct: 100, keyholePct: 10 },
   { label: "Pain", open: "Moderate – high", keyhole: "Low", openPct: 90, keyholePct: 30 },
 ];
 

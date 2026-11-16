@@ -66,3 +66,16 @@ No stock photos. No Montserrat/Poppins. No "best / painless / permanent / guaran
 - NAP: address now matches the Google Business Profile ("Sector B, Bargawan, LDA Colony, Lucknow, Uttar Pradesh 226012"). Still differing from GBP: phone (site "+91 92780 72150", GBP "092780 72150") and hospital name spelling (PDF "Superspeciality", GBP "Super Speciality"). Decide one and update the other side.
 - PDF's own text contains words its checklist bans ("permanent stoma", "gives the best cancer outcome", "best chance of cure", "Best for" table header, "Painless bright red bleeding"). Left as written except the two "painless" claims about colonoscopy, which were reworded. Review with Dr. Raza.
 - Still open per PDF: genuine consented reviews, certificate photographs for the credentials wall (cards use convocation/NHS photos as placeholders), Apollo/GBP experience + OPD days to match the site, submit sitemap to Search Console, verify GBP website link.
+
+## Round 8 (16 Nov 2026): red-marked edits from Dr-Wasif-Raza-Complete-Website-Content-v2.docx
+Doctor returned a v2-based docx with his changes in red; ONLY the red text was applied (18 edits), everything else stays on v4 FINAL:
+- Hero tagline: "Trained in the United Kingdom, Certified Robotic Surgeon by Intuitive (USA), NHS Experienced. Now in Lucknow."
+- Credential strip now 5 items, starting "MS — Dr. RML Awadh University, India" and "MCh — University of East Anglia in England".
+- "University of East Anglia in England" (home About + Why band), "Apollo Medics Superspeciality Hospitals Lucknow" in home About.
+- Research papers 7 → 10+; gallbladder card "Day-Care Procedure"; Why-band title "Trained in the United Kingdom's NHS Hospitals".
+- Home FAQ robotic answer → "…da Vinci Xi robotic system… selected colorectal and general surgery procedures where it gives an advantage."
+- About: "Certificate of Completion" row; "Transanal Resection of Rectal Cancer: Systematic Review"; "Wait & Watch" terminology sitewide (citation "International Watch & Wait Database" in lib/articles.ts kept as the journal's proper name).
+- Rectal recovery FAQ → "2–4 weeks to normal activity… within a few weeks" (glance + recovery planner matched: 14–28 days).
+- Laparoscopic page: FMAS "in 2014"; ports "5–10 mm"; lap/open table stay "1–3 days", return "Within days" (glance + CompareSlider matched).
+- Fistula complex type "…and sometimes sphincter repair."
+NOT applied (black text in the v2 doc that contradicts v4 FINAL): "14 years of experience" (v4 + doctor's 22 Oct confirmation say 15), reworded Why-band NHS line mentioning University of Liverpool, "he brings minimally invasive and robotic surgery to patients across Uttar Pradesh". Ask if any of these were intended.

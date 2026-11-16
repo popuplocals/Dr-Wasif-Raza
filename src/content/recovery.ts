@@ -15,7 +15,7 @@ export const RECOVERY: Record<string, { name: string; milestones: Milestone[] }>
     name: "Rectal cancer surgery",
     milestones: [
       { label: "Going home", from: 5, to: 7 },
-      { label: "Normal activity", from: 28, to: 42 },
+      { label: "Normal activity", from: 14, to: 28 },
     ],
   },
   "hernia-surgery-lucknow": {

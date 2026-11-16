@@ -7,8 +7,8 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 
 const REASONS = [
-  { title: "Trained in the UK NHS", text: "8 years in the NHS — Specialist Registrar in Colorectal Surgery at the Royal Liverpool University Hospital, then Colorectal Specialist at Betsi Cadwaladr University Health Board, Wales." },
-  { title: "A dedicated colon & rectal cancer subspecialist", text: "A 3-year MCh in Colon & Rectal Surgery from the University of East Anglia, UK. Colorectal surgery is his core specialisation." },
+  { title: "Trained in the United Kingdom's NHS Hospitals", text: "8 years in the NHS — Specialist Registrar in Colorectal Surgery at the Royal Liverpool University Hospital, then Colorectal Specialist at Betsi Cadwaladr University Health Board, Wales." },
+  { title: "A dedicated colon & rectal cancer subspecialist", text: "A 3-year MCh in Colon & Rectal Surgery from the University of East Anglia in England. Colorectal surgery is his core specialisation." },
   { title: "Two international fellowships", text: "FRCS (Royal College of Physicians & Surgeons of Glasgow) and FACS (American College of Surgeons)." },
   { title: "Laparoscopic and robotic first", text: "Dr. Raza performs laparoscopic and robotic surgery on the da Vinci Xi system at Apollo Medics — for colorectal cancer, hernia, gallbladder and selected GI procedures. Smaller incisions, less pain, faster recovery." },
   { title: "He explains. You decide.", text: "Every diagnosis, every option, every risk — in plain language, before any decision." },

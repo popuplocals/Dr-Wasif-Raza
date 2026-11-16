@@ -50,12 +50,12 @@ export default function AboutStrip() {
             </Reveal>
             <Reveal y={16} delay={0.14}>
               <p>
-                Dr. Wasif Raza is a colon and rectal cancer surgeon, laparoscopic and robotic surgery specialist, and general surgeon with <b>15 years of experience</b> — including <b>8 years in the UK&apos;s National Health Service</b> at the Royal Liverpool University Hospital, a major NHS tertiary colorectal unit. He holds an <b>MCh in Colon &amp; Rectal Surgery</b> from the University of East Anglia, and holds fellowships of both the <b>Royal College of Physicians &amp; Surgeons of Glasgow (FRCS)</b> and the <b>American College of Surgeons (FACS)</b>.
+                Dr. Wasif Raza is a colon and rectal cancer surgeon, laparoscopic and robotic surgery specialist, and general surgeon with <b>15 years of experience</b> — including <b>8 years in the UK&apos;s National Health Service</b> at the Royal Liverpool University Hospital, a major NHS tertiary colorectal unit. He holds an <b>MCh in Colon &amp; Rectal Surgery</b> from the University of East Anglia in England, and holds fellowships of both the <b>Royal College of Physicians &amp; Surgeons of Glasgow (FRCS)</b> and the <b>American College of Surgeons (FACS)</b>.
               </p>
             </Reveal>
             <Reveal y={16} delay={0.18}>
               <p>
-                Today, as Associate Director of Colorectal &amp; General Surgery at Apollo Medics Lucknow, he performs laparoscopic and robotic (da Vinci Xi) surgery for colorectal cancer, hernia, gallbladder and GI conditions — with one promise: <b>clear answers, honest advice, and the least invasive treatment that works.</b>
+                Today, as Associate Director of Colorectal &amp; General Surgery at Apollo Medics Superspeciality Hospitals Lucknow, he performs laparoscopic and robotic (da Vinci Xi) surgery for colorectal cancer, hernia, gallbladder and GI conditions — with one promise: <b>clear answers, honest advice, and the least invasive treatment that works.</b>
               </p>
             </Reveal>
           </div>

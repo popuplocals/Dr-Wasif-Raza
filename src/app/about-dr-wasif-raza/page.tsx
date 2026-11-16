@@ -18,14 +18,14 @@ const EDUCATION = [
   ["MBBS", "Garhwal University", "India"],
   ["MS — General Surgery", "Dr. RML Avadh University, UP", "India"],
   ["FMAS — Fellowship in Minimal Access Surgery", "AMASI (Association of Minimal Access Surgeons of India)", "India"],
-  ["Colorectal Surgery Residency Programme — certificate", "Royal College of Surgeons of England", "UK"],
+  ["Colorectal Surgery Residency Programme — Certificate of Completion", "Royal College of Surgeons of England", "UK"],
   ["MCh — Colon & Rectal Surgery (Principles of Coloproctology)", "University of East Anglia, Norwich", "UK"],
   ["FRCS — General Surgery", "Royal College of Physicians & Surgeons of Glasgow", "UK"],
   ["FACS (2023)", "American College of Surgeons", "USA"],
 ];
 
 const EXPERTISE = [
-  { title: "Colorectal & cancer surgery", items: ["Colon cancer surgery", "Rectal cancer surgery — TME, sphincter-preserving", "Watch & Wait for rectal cancer", "Laparoscopic & robotic colorectal resection", "IBD surgery — Crohn's, ulcerative colitis"] },
+  { title: "Colorectal & cancer surgery", items: ["Colon cancer surgery", "Rectal cancer surgery — TME, sphincter-preserving", "Wait & Watch for rectal cancer", "Laparoscopic & robotic colorectal resection", "IBD surgery — Crohn's, ulcerative colitis"] },
   { title: "Anorectal (proctology)", items: ["Piles — banding, laser, stapled, haemorrhoidectomy", "Anal fissure", "Anal fistula — LIFT, seton, VAAFT", "Pilonidal sinus", "Rectal prolapse"] },
   { title: "General, laparoscopic & robotic surgery", items: ["Robotic surgery — da Vinci Xi, Apollo Medics", "Laparoscopic & robotic hernia repair", "Laparoscopic cholecystectomy", "Laparoscopic appendicectomy", "Intestinal obstruction, diverticulitis"] },
   { title: "Endoscopy", items: ["Colonoscopy", "Upper GI endoscopy", "Colorectal cancer screening"] },
@@ -33,7 +33,7 @@ const EXPERTISE = [
 
 const RESEARCH = [
   "Cecal Bascule: A Rare Cause of Intestinal Obstruction",
-  "Transanal Resection of Rectal Cancer: A Review",
+  "Transanal Resection of Rectal Cancer: Systematic Review",
   "The Most Influential COVID-19 Articles: A Systematic Review",
   "Congenital Infantile Hydrocele in an Adult Patient — A Rare Presentation",
   "Accessory Cystic Duct Identified in Laparoscopic Cholecystectomy — A Rare Case",
@@ -68,7 +68,7 @@ export default function AboutPage() {
                 ["15+", "Years in surgery"],
                 ["8", "Years in NHS, UK"],
                 ["2", "Global fellowships"],
-                ["7", "Research papers"],
+                ["10+", "Research papers"],
               ].map(([n, l]) => (
                 <div key={l} className="rounded-2xl border border-line bg-surface p-4 shadow-card">
                   <p className="font-heading text-[32px] font-semibold leading-none text-teal">{n}</p>

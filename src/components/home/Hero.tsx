@@ -11,7 +11,7 @@ import { WaIcon } from "@/components/Navbar";
 const LINES = ["Colon & Rectal Cancer,", "Laparoscopic & Robotic Surgery,", "and General Surgery Specialist in"];
 
 /** Text strip beneath the hero (text only, no institutional logos). */
-const STRIP = ["FRCS — Royal College of Physicians & Surgeons of Glasgow", "FACS — American College of Surgeons", "MCh — University of East Anglia", "Apollo Medics Superspeciality Hospitals"];
+const STRIP = ["MS — Dr. RML Awadh University, India", "MCh — University of East Anglia in England", "FRCS — Royal College of Physicians & Surgeons of Glasgow", "FACS — American College of Surgeons", "Apollo Medics Superspeciality Hospitals"];
 
 /**
  * Hero (PDF section 3.1). Ruled editorial layout: the H1 reveals line by line; the portrait frame, scale and
@@ -63,7 +63,7 @@ export default function Hero() {
             <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: EASE, delay: 0.7 }} className="mt-8">
               <p className="text-[16px] font-semibold text-teal-deep md:text-[17px]">MBBS · MS · MCh (Colon &amp; Rectal Surgery) · FRCS (UK) · FACS (USA)</p>
               <p className="mt-1 text-[15px] text-ink-2 md:text-[16px]">Associate Director — Colorectal &amp; General Surgery, Apollo Medics Superspeciality Hospitals</p>
-              <p className="mt-5 max-w-[46ch] text-[18px] leading-[1.6] text-ink md:text-[19px]">UK-trained. NHS-experienced. Robotic surgery on the da Vinci Xi at Apollo Medics Lucknow.</p>
+              <p className="mt-5 max-w-[46ch] text-[18px] leading-[1.6] text-ink md:text-[19px]">Trained in the United Kingdom, Certified Robotic Surgeon by Intuitive (USA), NHS Experienced. Now in Lucknow.</p>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: EASE, delay: 0.85 }} className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
@@ -93,9 +93,9 @@ export default function Hero() {
         </div>
 
         {/* Credential strip: text, not logos */}
-        <ul className="grid border-t border-teal-deep/70 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid grid-cols-1 border-t border-teal-deep/70 lg:grid-cols-5">
           {STRIP.map((s, i) => (
-            <motion.li key={s} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: EASE, delay: 1 + i * 0.08 }} className={`flex items-center gap-3 px-1 py-5 text-[13.5px] font-semibold leading-snug text-teal-deep md:px-5 ${i > 0 ? "border-t border-line sm:border-t-0 lg:border-l" : ""} ${i === 1 ? "sm:border-l" : ""} ${i === 3 ? "sm:border-l" : ""} ${i >= 2 ? "sm:border-t lg:border-t-0" : ""}`}>
+            <motion.li key={s} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: EASE, delay: 1 + i * 0.08 }} className={`flex items-center gap-3 px-1 py-5 text-[13.5px] font-semibold leading-snug text-teal-deep md:px-5 ${i > 0 ? "border-t border-line lg:border-l lg:border-t-0" : ""}`}>
               <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-amber" />
               {s}
             </motion.li>

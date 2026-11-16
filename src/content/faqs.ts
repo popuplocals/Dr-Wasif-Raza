@@ -3,7 +3,7 @@ import type { FaqItem } from "@/components/Faq";
 export const HOME_FAQS: FaqItem[] = [
   { q: "What is Dr. Wasif Raza's specialisation?", a: "Colon and rectal cancer surgery, laparoscopic surgery, and general surgery — with an MCh in Colon &amp; Rectal Surgery (University of East Anglia, UK), FRCS (Glasgow) and FACS (USA), at Apollo Medics Lucknow." },
   { q: "Is laparoscopic surgery safe for colon cancer?", a: "Yes. It has equivalent cancer outcomes to open surgery, with less pain and faster recovery." },
-  { q: "Does Dr. Raza perform robotic surgery?", a: "Yes. Dr. Raza performs robotic surgery on the da Vinci Xi system at Apollo Medics Lucknow for colorectal cancer, rectal cancer and complex hernia cases." },
+  { q: "Does Dr. Raza perform robotic surgery?", a: "Yes. Apollo Medics Lucknow has a da Vinci Xi robotic system. Robotic surgery is offered for selected colorectal and general surgery procedures where it gives an advantage." },
   { q: "Can I get a second opinion for colon cancer?", a: "Yes. Bring your reports, scans and biopsy results. <a href=\"/second-opinion-colon-rectal-cancer-lucknow\">How a second opinion works</a>." },
   { q: "Is online consultation available?", a: "Yes — through Apollo 24|7." },
   { q: "How do I book an appointment?", a: "Call <a href=\"tel:+919278072150\">+91 92780 72150</a>, WhatsApp, or visit Apollo Medics Lucknow." },
@@ -25,7 +25,7 @@ export const FAQ_GROUPS: { title: string; items: FaqItem[] }[] = [
       { q: "Is colorectal cancer curable?", a: "Stage 1–2: usually cured by surgery alone. Stage 3: surgery plus chemotherapy, good outcomes. Stage 4: treatable, sometimes curable depending on spread. Individual results vary." },
       { q: "Can cancer surgery be done laparoscopically?", a: "Yes — same cancer clearance as open surgery and faster recovery." },
       { q: "Will I need a colostomy bag?", a: "Rarely for colon cancer. For rectal cancer, most patients avoid a permanent bag with sphincter-saving surgery; some need a temporary one for a few months." },
-      { q: "What is Watch & Wait?", a: "For rectal cancers that disappear completely after chemoradiotherapy, surgery may be deferred under close surveillance." },
+      { q: "What is Wait & Watch?", a: "For rectal cancers that disappear completely after chemoradiotherapy, surgery may be deferred under close surveillance." },
       { q: "At what age should I have a screening colonoscopy?", a: "From 45–50 depending on the guideline followed. With a family history, from 40 — or 10 years before the youngest affected relative." },
     ],
   },
