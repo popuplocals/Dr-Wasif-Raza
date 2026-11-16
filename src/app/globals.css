@@ -80,11 +80,6 @@ body {
 }
 
 @layer components {
-/* Page transition: a teal sheet that lifts away on every navigation */
-.page-wipe { position: fixed; inset: 0; z-index: 9000; background: var(--color-teal-deep); pointer-events: none; animation: page-wipe 0.8s cubic-bezier(0.76, 0, 0.24, 1) 0.05s both; }
-@keyframes page-wipe { from { clip-path: inset(0 0 0 0); } to { clip-path: inset(0 0 100% 0); visibility: hidden; } }
-@media (prefers-reduced-motion: reduce) { .page-wipe { display: none; } }
-
 /* Page transition */
 .page-enter { overflow-x: clip; animation: page-enter 0.7s var(--ease-out-expo) both; }
 @keyframes page-enter {
