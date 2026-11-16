@@ -10,7 +10,7 @@ import { breadcrumbLd, GMC, NMC } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Dr. Wasif Raza — UK-Trained Colorectal & General Surgeon in Lucknow | FRCS · FACS · MCh",
-  description: "Dr. Wasif Raza — 15+ years in colorectal and general surgery, 8 years in UK NHS. MCh Colon & Rectal Surgery, FRCS (UK), FACS (USA). Associate Director, Apollo Medics Lucknow.",
+  description: "Dr. Wasif Raza — 14+ years in colorectal and general surgery, 8 years in UK NHS. MCh Colon & Rectal Surgery, FRCS (UK), FACS (USA). Associate Director, Apollo Medics Lucknow.",
   alternates: { canonical: "/about-dr-wasif-raza" },
 };
 
@@ -50,7 +50,7 @@ export default function AboutPage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
         eyebrow="About"
         heading="Who is Dr. Wasif Raza?"
-        subtitle="An internationally trained Colorectal &amp; General Surgeon, bringing over 15 years of surgical experience — including 8 years of specialist practice in the United Kingdom's NHS. He serves as Associate Director of Colorectal &amp; General Surgery at Apollo Medics Superspeciality Hospitals, Lucknow."
+        subtitle="An internationally trained Colorectal &amp; General Surgeon, bringing over 14 years of surgical experience — including 8 years of specialist practice in the United Kingdom's NHS. He serves as Associate Director of Colorectal &amp; General Surgery at Apollo Medics Superspeciality Hospitals, Lucknow."
         image={{ src: "/photos/portrait-news.webp", alt: "Dr Wasif Raza, UK-trained colorectal and general surgeon in Lucknow", position: "center 15%" }}
       />
 
@@ -65,7 +65,7 @@ export default function AboutPage() {
             </p>
             <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {[
-                ["15+", "Years in surgery"],
+                ["14+", "Years in surgery"],
                 ["8", "Years in NHS, UK"],
                 ["2", "Global fellowships"],
                 ["10+", "Research papers"],

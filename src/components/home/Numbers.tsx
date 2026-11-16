@@ -3,7 +3,7 @@ import CountUp from "@/components/CountUp";
 import Reveal from "@/components/Reveal";
 
 const STATS = [
-  { num: "15+", label: "Years in surgery" },
+  { num: "14+", label: "Years in surgery" },
   { num: "8", label: "Years in NHS, UK" },
   { num: "2", label: "Global fellowships" },
   { num: "10+", label: "Published research papers" },

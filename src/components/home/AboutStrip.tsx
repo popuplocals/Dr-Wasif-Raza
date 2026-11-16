@@ -50,7 +50,7 @@ export default function AboutStrip() {
             </Reveal>
             <Reveal y={16} delay={0.14}>
               <p>
-                Dr. Wasif Raza is a colon and rectal cancer surgeon, laparoscopic and robotic surgery specialist, and general surgeon with <b>15 years of experience</b> — including <b>8 years in the UK&apos;s National Health Service</b> at the Royal Liverpool University Hospital, a major NHS tertiary colorectal unit. He holds an <b>MCh in Colon &amp; Rectal Surgery</b> from the University of East Anglia in England, and holds fellowships of both the <b>Royal College of Physicians &amp; Surgeons of Glasgow (FRCS)</b> and the <b>American College of Surgeons (FACS)</b>.
+                Dr. Wasif Raza is a colon and rectal cancer surgeon, laparoscopic and robotic surgery specialist, and general surgeon with <b>14 years of experience</b> — including <b>8 years in the UK&apos;s National Health Service</b> at the Royal Liverpool University Hospital, a major NHS tertiary colorectal unit. He holds an <b>MCh in Colon &amp; Rectal Surgery</b> from the University of East Anglia in England, and holds fellowships of both the <b>Royal College of Physicians &amp; Surgeons of Glasgow (FRCS)</b> and the <b>American College of Surgeons (FACS)</b>.
               </p>
             </Reveal>
             <Reveal y={16} delay={0.18}>
