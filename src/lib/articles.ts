@@ -43,7 +43,12 @@ export function readingTime(html: string) {
 
 export function articleSummary(a: Article) {
   const m = a.html.match(/<p>([\s\S]*?)<\/p>/);
-  const text = (m ? m[1] : a.meta).replace(/<[^>]+>/g, "");
+  const text = (m ? m[1] : a.meta)
+    .replace(/<[^>]+>/g, "")
+    .replace(/&#34;|&quot;/g, String.fromCharCode(34))
+    .replace(/&#39;|&#x27;/g, String.fromCharCode(39))
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&");
   return text.length > 180 ? text.slice(0, 177).trimEnd() + "…" : text;
 }
 

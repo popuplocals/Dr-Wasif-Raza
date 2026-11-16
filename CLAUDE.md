@@ -79,3 +79,8 @@ Doctor returned a v2-based docx with his changes in red; ONLY the red text was a
 - Laparoscopic page: FMAS "in 2014"; ports "5–10 mm"; lap/open table stay "1–3 days", return "Within days" (glance + CompareSlider matched).
 - Fistula complex type "…and sometimes sphincter repair."
 UPDATE 16 Nov: the doctor confirmed 14 years — site now says 14 / 14+ everywhere. Still NOT applied (black text in the v2 doc): reworded Why-band NHS line mentioning University of Liverpool, "he brings minimally invasive and robotic surgery to patients across Uttar Pradesh". Ask if any of these were intended.
+
+## Round 9 (16 Nov 2026): alignment QA pass
+- Audited all 13 page templates at 1030px and 375px: no horizontal overflow anywhere, one H1 each, no unequal card rows, no misaligned button rows. Flagged offsets were intentional (card paddings, eyebrow dash, pre-reveal x-offsets).
+- Credentials wall rebuilt as a straight 2×2/4-up grid (was a pinned scroll-driven rail with ±0.6° tilted cards and a blank lead-in screen — read as "up and down").
+- articleSummary() now decodes HTML entities (cards showed raw &#34; codes).
